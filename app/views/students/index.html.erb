@@ -1,0 +1,10 @@
+<% title 'Student index' %>
+<h1>Student index</h1><br>
+
+<p>
+<% @students.each do |s| %>
+	User id: <%= s.description %><br>
+<% end %>
+</p>
+<%= link_to 'New student', new_student_path %> |
+<%= link_to 'Back', root_path %>
