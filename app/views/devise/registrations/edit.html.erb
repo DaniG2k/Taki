@@ -15,6 +15,25 @@
   
   <div><%= f.label :last_name %><br />
   <%= f.text_field :last_name %></div>
+  
+  <div>
+	  <%= f.radio_button(:gender, "male") %>
+		<%= f.label(:gender_male, "Male") %>
+		<%= f.radio_button(:gender, "female") %>
+		<%= f.label(:gender_female, "Female") %>
+	</div>
+	<p>
+		Role:
+		<%= f.check_box :tutor %>
+		<%= f.label :tutor, 'Tutor' %>
+		<%= f.check_box :student %>
+		<%= f.label :student, 'Student' %>
+	</p>
+	
+	<div>
+		<%= f.label :birthday %><br />
+		<%= f.text_field :birthday %>
+	</div>
 
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>

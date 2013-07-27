@@ -6,11 +6,21 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
+	<div>
+		<%= f.label :tutor %>
+		<%= f.check_box :tutor %>
+		<%= f.label :student %>
+		<%= f.check_box :student %>
+	</div>
+	
   <div><%= f.label :password %><br />
   <%= f.password_field :password %></div>
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
+  
+  Accept Terms of Service
+  <%= f.check_box :terms %>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
