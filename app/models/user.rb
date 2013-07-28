@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :tutor
+  has_one :tutor, dependent: :destroy
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   
   private
     def tutor_or_student_checkbox_selected
-      unless self.tutor || self.student
+      unless self.is_tutor || self.is_student
         errors.add(:base, 'Select one or both of tutor/student checkboxes')
       end
     end

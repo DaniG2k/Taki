@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130728205123) do
+ActiveRecord::Schema.define(version: 20130728213624) do
 
   create_table "tutors", force: true do |t|
     t.text     "description"
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20130728205123) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "gender"
-    t.boolean  "tutor"
-    t.boolean  "student"
     t.string   "avatar"
     t.string   "avatar_cache"
+    t.boolean  "is_tutor"
+    t.boolean  "is_student"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
