@@ -6,6 +6,7 @@
 	<li>
 		<strong><%= user.first_name %> <%= user.last_name %></strong>
 		<ul>
+			<li><%= image_tag user.avatar_url.to_s %></li>
 			<li><%= user.email %></li>
 			<li><%= user.gender %></li>
 			<li><%= user.birthday %></li>

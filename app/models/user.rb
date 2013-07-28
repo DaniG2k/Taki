@@ -1,13 +1,16 @@
 class User < ActiveRecord::Base
+  has_one :tutor
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
+  mount_uploader :avatar, AvatarUploader
+  
   validates_acceptance_of :terms
   validate :tutor_or_student_checkbox_selected
-    
+  
   private
     def tutor_or_student_checkbox_selected
       unless self.tutor || self.student

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130727202625) do
+ActiveRecord::Schema.define(version: 20130728205123) do
+
+  create_table "tutors", force: true do |t|
+    t.text     "description"
+    t.decimal  "rate"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -32,6 +40,8 @@ ActiveRecord::Schema.define(version: 20130727202625) do
     t.string   "gender"
     t.boolean  "tutor"
     t.boolean  "student"
+    t.string   "avatar"
+    t.string   "avatar_cache"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -46,3 +46,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem 'rmagick'
+gem 'carrierwave'
