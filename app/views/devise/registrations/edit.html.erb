@@ -31,6 +31,16 @@
 	</p>
 	
 	<div>
+		<%= f.fields_for :tutor do |builder| %>
+		<fieldset>
+			<%= builder.label :description, 'Description' %><br />
+			<%= builder.text_area :description %><br />
+			<%= builder.check_box :_destroy, 'Remove description' %>
+		</fieldset>
+		<% end %>
+	</div>
+	
+	<div>
 		<%= f.label :birthday %><br />
 		<%= f.text_field :birthday %>
 	</div>
@@ -45,7 +55,7 @@
 		<%= f.label :remove_avatar, 'Remove profile picture'%>
 		<%= f.check_box :remove_avatar %>
 	</div>
-	<brc />
+	<br />
   <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 

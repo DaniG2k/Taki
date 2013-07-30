@@ -15,6 +15,7 @@ class ApplicationController < ActionController::Base
         u.permit(:first_name, :last_name, :email, :gender, 
         :is_tutor, :is_student, :birthday, :password,
         :avatar, :remove_avatar, :avatar_cache,
+        :tutor_attributes,
         :password_confirmation, :current_password)
       end
     end

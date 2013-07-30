@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :tutor, dependent: :destroy
+  accepts_nested_attributes_for :tutor, allow_destroy: true
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
