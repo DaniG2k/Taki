@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
         :is_tutor, :is_student, :birthday, :password,
         :avatar, :remove_avatar, :avatar_cache,
         :password_confirmation, :current_password,
-        tutor_attributes: [:id, :_destroy, :user_id, :description, :rate])
+        :tutor_attributes => [:id, :_destroy, :user_id, :description, :rate])
       end
     end
 end

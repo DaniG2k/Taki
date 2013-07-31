@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   
   private
     def tutor_or_student_checkbox_selected
-      unless self.is_tutor || self.is_student
+      unless self.is_tutor or self.is_student
         errors.add(:base, 'Select one or both of tutor/student checkboxes')
       end
     end
