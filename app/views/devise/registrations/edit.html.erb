@@ -31,11 +31,14 @@
 	</p>
 	
 	<div>
-		<%= f.fields_for :tutor do |builder| %>
+		<%= f.fields_for current_user.build_tutor do |t| %>
 		<fieldset>
-			<%= builder.label :description, 'Description' %><br />
-			<%= builder.text_area :description %><br />
-			<%= builder.check_box :_destroy, 'Remove description' %>
+			<%= t.label :description, 'Description' %><br />
+			<%= t.text_area :description %><br />
+			<%= t.label :rate, 'Rate' %><br />
+			<%= t.text_field :rate %><br />
+			<%= t.check_box :_destroy %>
+			<%= t.label :_destroy, "Remove Description" %>
 		</fieldset>
 		<% end %>
 	</div>
