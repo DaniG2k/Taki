@@ -18,3 +18,7 @@
 </ol>
 
 <%= current_user.tutor.inspect %>
+<% @tutors.each do |tutor| %>
+	<br />
+	<%= tutor.description%>, Rate: <%= tutor.rate %>
+<% end %>
