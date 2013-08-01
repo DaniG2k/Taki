@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_one :tutor, dependent: :destroy
-  accepts_nested_attributes_for :tutor, allow_destroy: true
+  accepts_nested_attributes_for :tutor, allow_destroy: true #, reject_if: :parent_not_tutor
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
         errors.add :base, 'Select one or both of tutor/student checkboxes'
       end
     end
+    
+    #def parent_not_tutor
+    #  !self.is_tutor
+    #end
 end
