@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_one :tutor, dependent: :destroy
-  accepts_nested_attributes_for :tutor, allow_destroy: true #, reject_if: :parent_not_tutor
+  accepts_nested_attributes_for :tutor
+  before_save :update_tutor
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -9,6 +11,7 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
   
+  # Validations
   validates_acceptance_of :terms
   validate :tutor_or_student_checkbox_selected
   
@@ -19,7 +22,7 @@ class User < ActiveRecord::Base
       end
     end
     
-    #def parent_not_tutor
-    #  !self.is_tutor
-    #end
+    def update_tutor
+      self.tutor.destroy if(self.tutor and !self.is_tutor)
+    end
 end

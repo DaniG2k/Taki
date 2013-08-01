@@ -2,7 +2,7 @@ Taki::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations"}
   
   get "home/about"
   get "users/show"

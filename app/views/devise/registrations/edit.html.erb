@@ -29,16 +29,19 @@
 		<%= f.check_box :is_student %>
 		<%= f.label :is_student, 'Student' %>
 	</p>
-	
+
 	<div>
+		<% if current_user.tutor %>
+		Current user is a tutor
+		<% else %>
+		Current user is not a tutor
+		<% end %>
 		<%= f.fields_for :tutor do |builder| %>
 		<fieldset>
 			<%= builder.label :description, 'Description' %><br />
 			<%= builder.text_area :description %><br />
 			<%= builder.label :rate, 'Rate' %><br />
 			<%= builder.text_field :rate %><br />
-			<%= builder.check_box :_destroy %>
-			<%= builder.label :_destroy, "Remove Description" %>
 		</fieldset>
 		<% end %>
 	</div>
