@@ -1,6 +1,12 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
+<% if current_user.tutor %>
+	Current user is a tutor
+<% else %>
+	Current user is not a tutor
+<% end %>
+
 <ol>
 <% @users.each do |user| %>
 	<li>
