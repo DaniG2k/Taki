@@ -48,3 +48,4 @@ end
 gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
+gem 'brakeman', group: :development
