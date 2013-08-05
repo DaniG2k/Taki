@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_one :tutor, dependent: :destroy
   accepts_nested_attributes_for :tutor
-  before_save :update_tutor
+  before_validation :update_tutor
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
   
   # Validations
   validates_acceptance_of :terms
+  validates_associated :tutor, if: :is_tutor?
   validate :tutor_or_student_checkbox_selected, on: :update
-  validates_numericality_of :rate, greater_than: 0, if: -> {binding.pry}
   
   private
     def tutor_or_student_checkbox_selected
