@@ -29,13 +29,8 @@
 		<%= f.check_box :is_student %>
 		<%= f.label :is_student, 'Student' %>
 	</p>
-
+	
 	<div>
-		<% if resource.tutor %>
-		Current user is a tutor
-		<% else %>
-		Current user is not a tutor
-		<% end %>
 		<%= f.fields_for :tutor do |builder| %>
 		<fieldset>
 			<%= builder.label :description, 'Description' %><br />

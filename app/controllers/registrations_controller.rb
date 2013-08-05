@@ -5,7 +5,7 @@ class RegistrationsController < Devise::RegistrationsController
     super
   end
   
-  private    
+  private
     def check_tutor_is_built
       resource.build_tutor unless resource.tutor
     end

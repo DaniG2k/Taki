@@ -49,3 +49,4 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'brakeman', group: :development
+gem 'pry', group: :development

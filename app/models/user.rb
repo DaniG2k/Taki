@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   # Validations
   validates_acceptance_of :terms
   validate :tutor_or_student_checkbox_selected, on: :update
+  validates_numericality_of :rate, greater_than: 0, if: -> {binding.pry}
   
   private
     def tutor_or_student_checkbox_selected

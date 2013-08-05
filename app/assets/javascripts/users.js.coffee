@@ -13,3 +13,4 @@ user_birthday = ->
     
 $(document).ready(user_birthday)
 $(document).on('page:load', user_birthday)
+
