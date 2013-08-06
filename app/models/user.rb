@@ -17,13 +17,15 @@ class User < ActiveRecord::Base
   validate :tutor_or_student_checkbox_selected, on: :update
   
   private
+    def update_tutor
+      # Destroy tutor object if the user is currently
+      # a tutor, and the is_tutor checkbox is unticked.
+      self.tutor.destroy if(self.tutor and !self.is_tutor)
+    end
+    
     def tutor_or_student_checkbox_selected
       unless self.is_tutor or self.is_student
         errors.add :base, 'Select one or both of tutor/student checkboxes'
       end
-    end
-    
-    def update_tutor
-      self.tutor.destroy if(self.tutor and !self.is_tutor)
     end
 end
