@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   # Validations
-  validate :tutor_or_student_checkbox_selected, on: :update
   validates_acceptance_of :terms
   validates_associated :tutor, if: :is_tutor?
+  validate :user_age, on: :update
   
   private
     def update_tutor
@@ -23,9 +23,14 @@ class User < ActiveRecord::Base
       self.tutor.destroy if(self.tutor and !self.is_tutor)
     end
     
-    def tutor_or_student_checkbox_selected
-      unless self.is_tutor or self.is_student
-        errors.add :base, 'Select one or both of tutor/student checkboxes'
+    def user_age
+      age = self.birthday
+      if age.nil?
+        errors.add(:birthday, "field required.")
+      else
+        if age >= 18.years.ago # user needs to be 18 or older
+          errors.add(:birthday, "unaccepted. You may be a bit too young.") 
+        end
       end
     end
 end

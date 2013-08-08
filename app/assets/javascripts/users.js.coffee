@@ -7,9 +7,9 @@ user_birthday = ->
     changeYear: true,
     minDate: "-90Y",
     maxDate: 0,
-    yearRange: "-60:-15",
+    yearRange: "-60:-18",
     dateFormat: "yy-mm-dd"
-    })
+  })
     
 $(document).ready(user_birthday)
 $(document).on('page:load', user_birthday)

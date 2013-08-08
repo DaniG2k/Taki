@@ -1,3 +1,4 @@
+<% title 'Edit Profile' %>
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
@@ -22,12 +23,17 @@
 		<%= f.radio_button :gender, "female" %>
 		<%= f.label :gender_female, "Female" %>
 	</div>
+	
+	<div>
+		<%= f.label :birthday %><br />
+		<%= f.text_field :birthday %>
+		Users must be aged 18 or over
+	</div>
+	
 	<p>
 		Role:
 		<%= f.check_box :is_tutor %>
 		<%= f.label :is_tutor, 'Tutor' %>
-		<%= f.check_box :is_student %>
-		<%= f.label :is_student, 'Student' %>
 	</p>
 	
 	<div>
@@ -39,11 +45,6 @@
 			<%= builder.text_field :rate %><br />
 		</fieldset>
 		<% end %>
-	</div>
-	
-	<div>
-		<%= f.label :birthday %><br />
-		<%= f.text_field :birthday %>
 	</div>
 
 	<div>

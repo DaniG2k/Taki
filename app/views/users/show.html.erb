@@ -1,3 +1,4 @@
+<% title 'Users List' %>
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 
@@ -17,13 +18,11 @@
 			<li><%= user.gender %></li>
 			<li><%= user.birthday %></li>
 			<li>Is a tutor: <%= user.is_tutor %></li>
-			<li>Is a student: <%= user.is_student %></li>
 		</ul>
 	</li>
 <% end %>
 </ol>
 
-<%= current_user.tutor.inspect %>
 <% @tutors.each do |tutor| %>
 	<br />
 	<%= tutor.description%>, Rate: <%= tutor.rate %>
