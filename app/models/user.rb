@@ -12,9 +12,9 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   # Validations
+  validate :tutor_or_student_checkbox_selected, on: :update
   validates_acceptance_of :terms
   validates_associated :tutor, if: :is_tutor?
-  validate :tutor_or_student_checkbox_selected, on: :update
   
   private
     def update_tutor
