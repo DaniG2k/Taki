@@ -48,5 +48,7 @@ end
 gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
+gem "country_select"
 gem 'brakeman', group: :development
 gem 'pry', group: :development
+

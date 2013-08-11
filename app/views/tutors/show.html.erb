@@ -1,0 +1,10 @@
+<% title 'Show Tutor' %>
+<%= flash[:success] %>
+<br /><br />
+<div>
+	<%= @tutor.description%>, Rate: <%= @tutor.rate %><br />
+	<%= @tutor.country %>
+</div>
+<p>
+	<%= link_to 'Edit Tutor', edit_tutor_path(@tutor) %>
+</p>

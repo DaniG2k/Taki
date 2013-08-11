@@ -26,8 +26,11 @@
 
 <p>
 	<%= link_to 'Home', :root %> |
-	<%= link_to 'About', :home_about %> |
+	<%= link_to 'About', about_path %> |
 	<%= link_to 'List Users', :users_show %>
+	<% if user_signed_in? %> |
+		<%= link_to 'My Tutor Info', tutor_path(@tutor) %>
+	<% end %>
 </p>
 
 </body>

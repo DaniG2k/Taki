@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_one :tutor, dependent: :destroy
-  accepts_nested_attributes_for :tutor
-  before_validation :update_tutor
+  #before_validation :update_tutor
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -13,15 +12,15 @@ class User < ActiveRecord::Base
   
   # Validations
   validates_acceptance_of :terms
-  validates_associated :tutor, if: :is_tutor?
+  #validates_associated :tutor, if: :is_tutor?
   validate :user_age, on: :update
   
   private
-    def update_tutor
+    #def update_tutor
       # Destroy tutor object if the user is currently
       # a tutor, and the is_tutor checkbox is unticked.
-      self.tutor.destroy if(self.tutor and !self.is_tutor)
-    end
+      #self.tutor.destroy if(self.tutor and !self.is_tutor)
+    #end
     
     def user_age
       age = self.birthday

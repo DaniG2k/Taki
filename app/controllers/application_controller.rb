@@ -1,9 +1,16 @@
 class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_tutor, if: :user_signed_in?
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
+  private
+    def set_tutor
+      @tutor = Tutor.find_by_user_id(current_user.id)
+    end
+    
   protected
     def configure_permitted_parameters
       devise_parameter_sanitizer.for(:sign_up) do |u|
@@ -14,8 +21,7 @@ class ApplicationController < ActionController::Base
         u.permit(:first_name, :last_name, :email, :gender, 
         :is_tutor, :birthday, :password,
         :avatar, :remove_avatar, :avatar_cache,
-        :password_confirmation, :current_password,
-        :tutor_attributes => [:id, :user_id, :description, :rate])
+        :password_confirmation, :current_password)
       end
     end
 end

@@ -25,5 +25,6 @@
 
 <% @tutors.each do |tutor| %>
 	<br />
-	<%= tutor.description%>, Rate: <%= tutor.rate %>
+	<%= tutor.description%>, Rate: <%= tutor.rate %><br />
+	<%= tutor.country %>
 <% end %>

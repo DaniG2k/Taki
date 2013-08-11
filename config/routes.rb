@@ -4,8 +4,10 @@ Taki::Application.routes.draw do
   
   devise_for :users, controllers: {registrations: "registrations"}
   
-  get "home/about"
+  get "about", to: "home#about"
   get "users/show"
+  
+  resources :tutors, only: [:edit, :show, :update]
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
