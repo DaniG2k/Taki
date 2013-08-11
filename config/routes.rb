@@ -1,13 +1,17 @@
 Taki::Application.routes.draw do
-  # You can have the root of your site routed with "root"
-  root 'home#index'
-  
-  devise_for :users, controllers: {registrations: "registrations"}
-  
-  get "about", to: "home#about"
-  get "users/show"
-  
-  resources :tutors, only: [:edit, :show, :update]
+  scope "/:locale", locale: /#{I18n.available_locales.join("|")}/ do
+    # You can have the root of your site routed with "root"
+    root 'home#index'
+    
+    devise_for :users, controllers: {registrations: "registrations"}
+    
+    get "about", to: "home#about"
+    get "users/show"
+    
+    resources :tutors, only: [:edit, :show, :update]
+  end
+  #match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
+  #match '', to: redirect("/#{I18n.default_locale}")
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

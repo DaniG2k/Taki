@@ -1,5 +1,5 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_filter :check_tutor_is_built, only: :edit
+  before_action :check_tutor_is_built, only: :edit
   
   def edit
     super

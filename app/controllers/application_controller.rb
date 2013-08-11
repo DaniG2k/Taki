@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_action :set_tutor, if: :user_signed_in?
+  before_action :set_locale
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -9,6 +10,20 @@ class ApplicationController < ActionController::Base
   private
     def set_tutor
       @tutor = Tutor.find_by_user_id(current_user.id)
+    end
+    
+    def set_locale
+      I18n.locale = extract_locale_from_tld || I18n.default_locale
+    end
+    
+    def extract_locale_from_tld
+      parsed_locale = request.host.split('.').last
+      I18n.available_locales.include?(parsed_locale.to_sym) ? parsed_locale : nil
+    end
+    
+    def default_url_options(options={})
+      logger.debug "default_url_options is passed options: #{options.inspect}\n"
+      {locale: I18n.locale} 
     end
     
   protected
