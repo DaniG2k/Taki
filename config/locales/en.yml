@@ -24,3 +24,6 @@ en:
     index:
       title: 'Taki'
       description: 'Introduction to Taki'
+    about:
+      title: 'About'
+      description: 'Some information about Taki'

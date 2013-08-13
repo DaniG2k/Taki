@@ -3,3 +3,6 @@ ko:
     index:
       title: '타키'
       description: '타키의 소개'
+    about:
+      title: '타키에 대해'
+      description: '타키의 명세와 정보'

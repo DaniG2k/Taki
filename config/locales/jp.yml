@@ -3,3 +3,6 @@ jp:
     index:
       title: '滝'
       description: '滝の紹介'
+    about:
+      title: '滝について'
+      description: '滝の明細と情報'
