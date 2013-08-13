@@ -16,9 +16,6 @@ class User < ActiveRecord::Base
   validate :user_age, on: :update
   
   private
-    def self.lang_list
-      [%w(English en), %w(Chinese ch), %w(Japanese jp), %w(Korean kr)]
-    end
     #def update_tutor
       # Destroy tutor object if the user is currently
       # a tutor, and the is_tutor checkbox is unticked.
