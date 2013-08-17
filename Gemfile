@@ -52,3 +52,4 @@ gem "country_select"
 
 gem 'brakeman', group: :development
 gem 'pry', group: :development
+gem 'faker', group: :development

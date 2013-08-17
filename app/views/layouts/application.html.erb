@@ -34,7 +34,7 @@
 	<%= link_to 'Home', :root %> |
 	<%= link_to 'About', about_path %> |
 	<%= link_to 'List Users', :users_show %>
-	<% if user_signed_in? %> |
+	<% if user_signed_in?  and @tutor.present? %> |
 		<%= link_to 'My Tutor Info', tutor_path(@tutor) %>
 	<% end %>
 </p>

@@ -61,6 +61,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    faker (1.2.0)
+      i18n (~> 0.5)
     fastercsv (1.5.5)
     haml (4.0.3)
       tilt
@@ -165,6 +167,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   country_select
   devise
+  faker
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
