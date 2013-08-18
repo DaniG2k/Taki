@@ -13,3 +13,9 @@
 	</li>
 <% end %>
 </ol>
+
+<% if @tutor %>
+	<%= link_to 'Edit Tutor', edit_tutor_path(@tutor) %>
+<% else %>
+	<%= link_to 'Become a tutor', new_tutor_path %>
+<% end %>

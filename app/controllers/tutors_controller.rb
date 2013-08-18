@@ -33,7 +33,7 @@ class TutorsController < ApplicationController
   
   def update    
     if @tutor.update_attributes(tutor_params)
-      flash[:success] = 'Tutor profile updated'
+      flash[:success] = 'Tutor profile updated!'
       redirect_to @tutor
     else
       render "edit"
