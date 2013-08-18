@@ -37,7 +37,6 @@
 	<%= link_to 'List Tutors', tutors_path %>
 	<% if user_signed_in? %>
 		| 
-		
 		<% if @tutor.present? %>
 			<%= link_to 'Edit Tutor Info', edit_tutor_path(@tutor) %>
 		<% else %>

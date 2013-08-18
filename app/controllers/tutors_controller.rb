@@ -4,21 +4,14 @@ class TutorsController < ApplicationController
   
   def index
     @tutors = Tutor.all
-    
   end
   
   def new
     if current_user.tutor.blank?
-      @tutor = current_user.create_tutor
+      @tutor = current_user.create_tutor #build blank tutor object
     else
-      @tutor = current_user.tutor
+      redirect_to edit_tutor_path(@tutor)
     end
-  end
-
-  def show
-  end
-  
-  def edit
   end
   
   def create
@@ -30,6 +23,12 @@ class TutorsController < ApplicationController
       flash[:error] = 'Tutor profile not created'
       render "new"
     end
+  end
+
+  def show
+  end
+  
+  def edit
   end
   
   def update    

@@ -29,12 +29,6 @@
 		<%= f.text_field :birthday %>
 		Users must be aged 18 or over
 	</div>
-	
-	<p>
-		Role:
-		<%= f.check_box :is_tutor %>
-		<%= f.label :is_tutor, 'Tutor' %>
-	</p>
 
 	<div>
 		<%= image_tag(resource.avatar_url) if resource.avatar? %>
