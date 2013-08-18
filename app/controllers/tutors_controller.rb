@@ -1,24 +1,52 @@
 class TutorsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
+  before_action :set_tutor, only: [:index, :update, :edit, :show]
+  
+  def index
+    @tutors = Tutor.all
+    
+  end
+  
+  def new
+    if current_user.tutor.blank?
+      @tutor = current_user.create_tutor
+    else
+      @tutor = current_user.tutor
+    end
+  end
+
+  def show
+  end
   
   def edit
   end
   
-  def show
+  def create
+    @tutor = current_user.build_tutor(tutor_params)
+    if @tutor.save
+      flash[:success] = 'Tutor profile created!'
+      redirect_to @tutor
+    else
+      flash[:error] = 'Tutor profile not created'
+      render "new"
+    end
   end
   
-  def update
+  def update    
     if @tutor.update_attributes(tutor_params)
       flash[:success] = 'Tutor profile updated'
       redirect_to @tutor
     else
-      flash[:error] = 'Tutor profile not updated'
-      render 'edit'
+      render "new"
     end
   end
   
   private
     def tutor_params
       params.require(:tutor).permit(:id, :description, :rate, :country)
+    end
+    
+    def set_tutor
+      @tutor = current_user.tutor
     end
 end

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :configure_permitted_parameters, if: :devise_controller?
-  before_action :set_tutor, if: :user_signed_in?
+  before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
 
   # Prevent CSRF attacks by raising an exception.
@@ -8,10 +7,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   private
-    def set_tutor
-      @tutor = Tutor.find_by_user_id(current_user.id)
-    end
-    
     def set_locale
       I18n.locale = params[:locale] || I18n.default_locale
     end

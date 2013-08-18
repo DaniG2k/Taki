@@ -1,0 +1,15 @@
+<% title 'Tutors List' %>
+<h1>Tutors#index</h1>
+
+<ol>
+<% @tutors.each do |tutor| %>
+	<li>
+		<strong><%= tutor.user.first_name %> <%= tutor.user.last_name %></strong>
+		<ul>
+			<li>About: <%= tutor.description%></li>
+			<li>Rate: <%= tutor.rate %></li>
+			<li>Country: <%= tutor.country %></li>
+		</ul>
+	</li>
+<% end %>
+</ol>

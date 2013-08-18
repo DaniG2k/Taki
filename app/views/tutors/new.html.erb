@@ -1,5 +1,5 @@
-<% title 'Edit Tutor'%>
-<h1>Edit Tutor</h1>
+<% title 'New Tutor'%>
+<h1>New Tutor</h1>
 
 <%= render "errors" %>
 
@@ -10,7 +10,7 @@
 	<%= f.label :rate, 'Rate' %><br />
 	<%= f.text_field :rate %><br />
 	
-	<%= country_select(:tutor, :country) %><br />
+	<%= country_select(f, :country) %><br />
   
   <%= f.submit "Submit" %>
 <% end %>

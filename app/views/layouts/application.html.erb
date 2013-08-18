@@ -33,9 +33,16 @@
 <p>
 	<%= link_to 'Home', :root %> |
 	<%= link_to 'About', about_path %> |
-	<%= link_to 'List Users', :users_show %>
-	<% if user_signed_in?  and @tutor.present? %> |
-		<%= link_to 'My Tutor Info', tutor_path(@tutor) %>
+	<%= link_to 'List Users', :users_show %> |
+	<%= link_to 'List Tutors', tutors_path %>
+	<% if user_signed_in? %>
+		| 
+		
+		<% if @tutor.present? %>
+			<%= link_to 'Edit Tutor Info', edit_tutor_path(@tutor) %>
+		<% else %>
+			<%= link_to 'Make me a tutor!', new_tutor_path %>
+		<% end %>
 	<% end %>
 </p>
 
