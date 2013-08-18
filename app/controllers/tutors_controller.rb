@@ -1,6 +1,6 @@
 class TutorsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_tutor, only: [:index, :update, :edit, :show]
+  before_action :get_tutor, only: [:index, :update, :edit, :show, :destroy]
   
   def index
     @tutors = Tutor.all
@@ -10,7 +10,7 @@ class TutorsController < ApplicationController
     if current_user.tutor.blank?
       @tutor = current_user.create_tutor #build blank tutor object
     else
-      redirect_to edit_tutor_path(@tutor)
+      get_tutor
     end
   end
   
@@ -36,8 +36,13 @@ class TutorsController < ApplicationController
       flash[:success] = 'Tutor profile updated'
       redirect_to @tutor
     else
-      render "new"
+      render "edit"
     end
+  end
+  
+  def destroy
+    @tutor.destroy
+    redirect_to tutors_path
   end
   
   private
@@ -45,7 +50,7 @@ class TutorsController < ApplicationController
       params.require(:tutor).permit(:id, :description, :rate, :country)
     end
     
-    def set_tutor
+    def get_tutor
       @tutor = current_user.tutor
     end
 end

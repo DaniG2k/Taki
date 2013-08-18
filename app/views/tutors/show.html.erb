@@ -9,5 +9,6 @@
 	<%= @tutor.country %>
 </div>
 <p>
-	<%= link_to 'Edit Tutor', edit_tutor_path(@tutor) %>
+	<%= link_to 'Edit Tutor', edit_tutor_path(@tutor) %> |
+	<%= link_to 'Destroy Tutor', tutor_path(@tutor), method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
