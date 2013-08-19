@@ -53,3 +53,4 @@ gem "country_select"
 gem 'brakeman', group: :development
 gem 'pry', group: :development
 gem 'faker', group: :development
+gem "factory_girl_rails", "~> 4.0"

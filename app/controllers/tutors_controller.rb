@@ -20,7 +20,7 @@ class TutorsController < ApplicationController
       flash[:success] = 'Tutor profile created!'
       redirect_to @tutor
     else
-      flash[:error] = 'Tutor profile not created'
+      flash[:error] = 'Tutor profile not created.'
       render "new"
     end
   end
