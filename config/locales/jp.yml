@@ -8,8 +8,8 @@ jp:
       description: '滝の明細と情報'
   views:
     pagination:
-      first: "&laquo; 最初"
-      last: "最後 &raquo;"
+      first: "&lt; 最初"
+      last: "最後 &gt;"
       previous: "&lt; 前"
       next: "次へ &gt;"
       truncate: "..."

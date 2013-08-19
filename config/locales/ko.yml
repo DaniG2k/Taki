@@ -8,8 +8,8 @@ ko:
       description: '타키의 명세와 정보'
   views:
     pagination:
-      first: "&laquo; 처음"
-      last: "마지막 &raquo;"
+      first: "&lt; 처음"
+      last: "마지막 &gt;"
       previous: "&lt; 이전"
       next: "다음 &gt;"
       truncate: "..."

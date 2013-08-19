@@ -29,8 +29,8 @@ en:
       description: 'Some information about Taki'
   views:
     pagination:
-      first: "&laquo; First"
-      last: "Last &raquo;"
+      first: "&lt; First"
+      last: "Last &gt;"
       previous: "&lt; Prev"
       next: "Next &gt;"
       truncate: "..."
