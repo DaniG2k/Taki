@@ -3,7 +3,7 @@ class TutorsController < ApplicationController
   before_action :get_tutor, only: [:index, :update, :edit, :show, :destroy]
   
   def index
-    @tutors = Tutor.all
+    @tutors = Tutor.all.page(params[:page]).per(10)
   end
   
   def new

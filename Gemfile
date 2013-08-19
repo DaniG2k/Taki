@@ -49,6 +49,7 @@ gem 'devise'
 gem 'rmagick'
 gem 'carrierwave'
 gem "country_select"
+gem 'kaminari'
 
 gem 'brakeman', group: :development
 gem 'pry', group: :development

@@ -1,6 +1,8 @@
 <% title 'Tutors List' %>
 <h1>Tutors#index</h1>
 
+<%= paginate @tutors %>
+
 <ol>
 <% @tutors.each do |tutor| %>
 	<li>

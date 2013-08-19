@@ -10,7 +10,10 @@ Taki::Application.routes.draw do
     get "about", to: "home#about"
     get "users/show"
     
-    resources :tutors
+    resources :tutors do
+      get 'page/:page', :action => :index, :on => :collection
+    end
+    
   end
   #match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   #match '', to: redirect("/#{I18n.default_locale}")

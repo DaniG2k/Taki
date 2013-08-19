@@ -27,3 +27,10 @@ en:
     about:
       title: 'About'
       description: 'Some information about Taki'
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lt; Prev"
+      next: "Next &gt;"
+      truncate: "..."

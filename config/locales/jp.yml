@@ -6,3 +6,10 @@ jp:
     about:
       title: '滝について'
       description: '滝の明細と情報'
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lt; 前"
+      next: "次へ &gt;"
+      truncate: "..."

@@ -24,9 +24,9 @@ namespace :db do
     50.times do |n|
       user_id = n+1
       description = 'Some random description'
-      n = "%.2f" % rand(10.0..60.0)
+      n = "%.2f" % rand(10.0..500.0)
       rate = n.to_f
-      country = ['Italy', 'France', 'Korea, Republic of', 'Hong Kong', 'Japan'].sample
+      country = ['Italy', 'Mongolia', 'China', 'France', 'Korea, Republic of', 'Hong Kong', 'Japan'].sample
       Tutor.create!(user_id: user_id,
                     description: description,
                     rate: rate,
