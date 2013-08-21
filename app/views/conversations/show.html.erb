@@ -1,6 +1,5 @@
 <h1>Showing Conversations</h1>
 <p>
-	Conversation id: <%= @conversation.id %><br />
 	<h2>Messages</h2>
 	<% @conversation.messages.each do |message| %>
 		<p>
@@ -11,10 +10,13 @@
 			<strong>Body:</strong>
 			<%= message.body %>
 		</p>
+		<p>Conversation id: <%= message.conversation_id %> |
+		Message id: <%= message.id %></p>
 	<% end %>
 	
-	<h2>Participants:</h2><br />
-	
+	<h2>Participants:</h2>
+	Sender: <%= @conversation.sender_id %><br />
+	Recipient: <%= @conversation.recipient_id %>
 	
 	<h2>Add a message:</h2>
 	<%= form_for([@conversation, @conversation.messages.build]) do |f| %>
