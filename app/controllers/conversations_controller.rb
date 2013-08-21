@@ -7,8 +7,7 @@ class ConversationsController < ApplicationController
   end
   
   def create
-    #render text: params[:post].inspect
-    @conversation = Conversation.new(conversation_params)
+    @conversation = Conversation.new#(conversation_params)
     if @conversation.save
       redirect_to @conversation
     else
@@ -27,7 +26,7 @@ class ConversationsController < ApplicationController
   end
   
   private
-    def conversation_params
-      params.require(:post).permit(:id)
-    end
+    #def conversation_params
+    #  params.require(:post).permit(:id)
+    #end
 end
