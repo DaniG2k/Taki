@@ -1,0 +1,6 @@
+<h1>Listing Conversations</h1>
+<% @conversations.each do |c| %>
+	<%= link_to "Id. #{c.id}", c %> |
+	<%= link_to 'Destroy Conversation', conversation_path(c), method: :delete, data: { confirm: 'Are you sure?' } %> 
+	<br />
+<% end %>

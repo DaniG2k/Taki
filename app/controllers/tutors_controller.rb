@@ -36,7 +36,7 @@ class TutorsController < ApplicationController
       flash[:success] = 'Tutor profile updated!'
       redirect_to @tutor
     else
-      render "edit"
+      render 'edit'
     end
   end
   
