@@ -4,12 +4,9 @@ class ConversationsController < ApplicationController
   end
   
   def new
-    #recipient = params[:recipient_id]
-    
-  end
-  
-  def create
-    @conversation = Conversation.new(conversation_params)
+    recipient = params[:recipient_id]
+    sender = current_user.id
+    @conversation = Conversation.new(sender_id: sender, recipient_id: recipient)
     if @conversation.save
       redirect_to @conversation
     else
@@ -26,9 +23,4 @@ class ConversationsController < ApplicationController
     @conversation.destroy
     redirect_to conversations_path
   end
-  
-  private
-    def conversation_params
-      params.require(:post).permit(:recipient_id)
-    end
 end
