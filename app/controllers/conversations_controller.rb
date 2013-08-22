@@ -6,12 +6,10 @@ class ConversationsController < ApplicationController
   end
   
   def new
-    recipient = params[:recipient_id]
-    sender = current_user.id
-    
-    @conversation = Conversation.new(sender_id: sender, recipient_id: recipient)# conversation_params)
-    @conversation.save
-    redirect_to @conversation
+    @conversation = Conversation.new(conversation_params)
+    if @conversation.save
+      redirect_to @conversation
+    end
   end
   
   def show
@@ -24,8 +22,9 @@ class ConversationsController < ApplicationController
     redirect_to conversations_path
   end
   
-  #private
-  #  def conversation_params
-  #    params.permit(:recipient_id)
-  #  end
+  private
+    def conversation_params
+      params.merge!(sender_id: current_user.id.to_s)
+      params.permit(:sender_id, :recipient_id)
+    end
 end
