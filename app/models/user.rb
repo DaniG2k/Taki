@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_one :tutor, dependent: :destroy
+  has_many :conversations
   #before_validation :update_tutor
   
   # Include default devise modules. Others available are:
