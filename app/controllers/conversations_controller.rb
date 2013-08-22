@@ -21,6 +21,13 @@ class ConversationsController < ApplicationController
       @conversation = convo_query
       redirect_to @conversation
     else
+      # TODO
+      # Add logic for case where there's no subject, no body.
+      # In that case, don't save.
+      
+      # TODO
+      # Handle case for when an id is missing. In that case,
+      # don't save the message. 
       @conversation = Conversation.new(conversation_params)
       redirect_to @conversation if @conversation.save
     end
