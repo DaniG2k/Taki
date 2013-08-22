@@ -1,4 +1,6 @@
 class ConversationsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @conversations = Conversation.all
   end
@@ -6,12 +8,10 @@ class ConversationsController < ApplicationController
   def new
     recipient = params[:recipient_id]
     sender = current_user.id
-    @conversation = Conversation.new(sender_id: sender, recipient_id: recipient)
-    if @conversation.save
-      redirect_to @conversation
-    else
-      render 'new'
-    end
+    
+    @conversation = Conversation.new(sender_id: sender, recipient_id: recipient)# conversation_params)
+    @conversation.save
+    redirect_to @conversation
   end
   
   def show
@@ -23,4 +23,9 @@ class ConversationsController < ApplicationController
     @conversation.destroy
     redirect_to conversations_path
   end
+  
+  #private
+  #  def conversation_params
+  #    params.permit(:recipient_id)
+  #  end
 end

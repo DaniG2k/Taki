@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
     @conversation = Conversation.find(params[:conversation_id])
     @message = @conversation.messages.create(message_params)

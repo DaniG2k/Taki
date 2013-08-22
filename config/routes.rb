@@ -13,10 +13,10 @@ Taki::Application.routes.draw do
     resources :tutors do
       get 'page/:page', :action => :index, :on => :collection
     end
+    
     resources :conversations do
       resources :messages
     end
-    
   end
   #match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   #match '', to: redirect("/#{I18n.default_locale}")
