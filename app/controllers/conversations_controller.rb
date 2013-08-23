@@ -15,8 +15,8 @@ class ConversationsController < ApplicationController
     else
       # Prevent already messaging participants to create
       # more than one conversation.
-      convo_query = Conversation.where("(sender_id = ? AND recipient_id = ?) OR (recipient_id = ? AND sender_id = ?)",
-      sender, recipient, sender, recipient).first
+      query_s = "(sender_id = ? AND recipient_id = ?) OR (recipient_id = ? AND sender_id = ?)"
+      convo_query = Conversation.where(query_s, sender, recipient, sender, recipient).first
       if convo_query
         @conversation = convo_query
         redirect_to @conversation
