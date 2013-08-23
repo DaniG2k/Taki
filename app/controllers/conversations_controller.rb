@@ -7,10 +7,10 @@ class ConversationsController < ApplicationController
   
   def new
     sender = current_user.id.to_s
-    recipient = params[:recipient_id]
-    
+    recipient = params[:recipient_id] 
     # Prevent current user from messaging himself.
-    if recipient == sender
+    # Prevent accessing /new if no recipient provided.
+    if(recipient == sender or recipient.nil?)
       redirect_to conversations_path
     else
       # Prevent already messaging participants to create
@@ -21,10 +21,8 @@ class ConversationsController < ApplicationController
         @conversation = convo_query
         redirect_to @conversation
       else
-        # TODO
-        # Add logic for case where there's (no subject, no body)
-        # or an id is missing. In that case, don't save.
-        
+        # Prevent saving conversation if message's
+        # subject & body are left blank.
         @conversation = Conversation.new(conversation_params)
         redirect_to @conversation if @conversation.save
       end
@@ -32,6 +30,7 @@ class ConversationsController < ApplicationController
   end
   
   def show
+    # TODO
     # Prevent seeing/destroying other's messages.
     @conversation = Conversation.find(params[:id])
   end
