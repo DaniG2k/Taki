@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
       params.require(:message).permit(:subject, :body)
     end
     
-    def ongoing_thread?(convo_id)
+    def empty_thread?(convo_id)
       threads = Message.where(conversation_id: convo_id)
       threads.empty?
     end
