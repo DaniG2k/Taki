@@ -3,8 +3,8 @@ class MessagesController < ApplicationController
   
   def create
     @conversation = Conversation.find(params[:conversation_id])
-    @message = @conversation.messages.create(message_params)
-    redirect_to conversation_path(@conversation)
+    @message = @conversation.messages.build(message_params)
+    redirect_to conversation_path(@conversation) if @message.save
   end
   
   private

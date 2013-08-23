@@ -15,7 +15,7 @@ Taki::Application.routes.draw do
     end
     
     resources :conversations do
-      resources :messages
+      resources :messages, only: [:create]
     end
   end
   #match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
