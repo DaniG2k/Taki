@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
   
   def index
     # Clean out empty message conversations.
-    Conversation.find_each {|c| convo.destroy if convo.messages.empty?}
+    Conversation.find_each {|c| c.destroy if c.messages.empty?}
     @conversations = Conversation.all
   end
   
