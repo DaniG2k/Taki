@@ -2,6 +2,8 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
   
   def index
+    # Clean out empty message conversations.
+    Conversation.find_each {|c| convo.destroy if convo.messages.empty?}
     @conversations = Conversation.all
   end
   
@@ -21,8 +23,6 @@ class ConversationsController < ApplicationController
         @conversation = convo_query
         redirect_to @conversation
       else
-        # Prevent saving conversation if message's
-        # subject & body are left blank.
         @conversation = Conversation.new(conversation_params)
         redirect_to @conversation if @conversation.save
       end

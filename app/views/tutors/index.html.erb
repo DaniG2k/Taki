@@ -16,6 +16,8 @@
 <% end %>
 </ol>
 
+<%= paginate @tutors %>
+
 <% if @tutor %>
 	<%= link_to 'Edit Tutor', edit_tutor_path(@tutor) %>
 <% else %>
