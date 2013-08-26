@@ -1,35 +1,40 @@
 <h1>Showing Conversations</h1>
-<p>
-	<h2>Participants:</h2>
-	Sender: <%= @conversation.sender_id %><br />
-	Recipient: <%= @conversation.recipient_id %>
+
+<% if @message %>
+	<%= render 'errors' %>
+<% end %>
+
+<h2>Participants:</h2>
+Sender: <%= @conversation.sender_id %><br />
+Recipient: <%= @conversation.recipient_id %>
 	
-	<h2>Messages</h2>
-	<% @conversation.messages.each do |message| %>
-		<p>
-			<strong>Subject:</strong>
-			<%= message.subject %>
-		</p>
-		<p>
-			<strong>Body:</strong>
-			<%= message.body %>
-		</p>
-		<p>Conversation id: <%= message.conversation_id %> |
-		Message id: <%= message.id %></p>
-	<% end %>
+<h2>Messages</h2>
+<% @conversation.messages.each do |message| %>
+	<p>
+		<strong>Subject:</strong>
+		<%= message.subject %>
+	</p>
+	<p>
+		<strong>Body:</strong>
+		<%= message.body %>
+	</p>
+	<p>Conversation id: <%= message.conversation_id %> |
+	Message id: <%= message.id %></p>
+<% end %>
 	
-	<h2>Add a message:</h2>
-	<%= form_for([@conversation, @conversation.messages.build]) do |f| %>
-		<p>
-			<%= f.label :subject %>
-			<%= f.text_field :subject %>
-			<br />
-			<%= f.label :body %>
-			<%= f.text_area :body %>
-		</p>
-		<p>
-			<%= f.submit %>
-		</p>
-	<% end %>
-</p>
+	
+<h2>Add a message:</h2>
+<%= form_for([@conversation, @conversation.messages.build]) do |f| %>
+	<p>
+		<%= f.label :subject %>
+		<%= f.text_field :subject %>
+		<br />
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
 <%= link_to 'Back to Conversations', conversations_path %>

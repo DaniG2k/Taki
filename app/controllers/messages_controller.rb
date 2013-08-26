@@ -3,14 +3,21 @@ class MessagesController < ApplicationController
   
   def create
     @conversation = Conversation.find(params[:conversation_id])
-    @message = @conversation.messages.build(message_params)
+    
+    # This needs to be messages.new
+    @message = @conversation.messages.new(message_params)
+
     if @message.save
       redirect_to conversation_path(@conversation)
     # If there are other messages in this thread, don't delete.
     else
       flash[:error] = "Message not sent."
-      @conversation.delete if empty_thread?(@conversation.id)
-      redirect_to conversations_path
+      if empty_thread?(@conversation.id)
+        @conversation.delete
+        redirect_to conversations_path
+      else
+        render "conversations/show"
+      end
     end
   end
   
