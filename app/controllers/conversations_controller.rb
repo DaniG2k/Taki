@@ -4,7 +4,9 @@ class ConversationsController < ApplicationController
   def index
     # Clean out empty message conversations.
     Conversation.find_each {|c| c.destroy if c.messages.empty?}
-    @conversations = Conversation.all
+    #binding.pry
+    #@conversations = Conversation.all
+    @conversations = user_conversations
   end
   
   def new
@@ -30,13 +32,11 @@ class ConversationsController < ApplicationController
   end
   
   def show
-    # TODO
-    # Prevent seeing/destroying other's messages.
-    @conversation = Conversation.find(params[:id])
+    @conversation = user_conversations.find(params[:id])
   end
   
   def destroy
-    @conversation = Conversation.find(params[:id])
+    @conversation = user_conversations.find(params[:id])
     @conversation.destroy
     redirect_to conversations_path
   end
@@ -45,5 +45,10 @@ class ConversationsController < ApplicationController
     def conversation_params
       params.merge!(sender_id: current_user.id.to_s)
       params.permit(:sender_id, :recipient_id)
+    end
+    
+    def user_conversations
+      usrid = current_user.id.to_s
+      Conversation.where("sender_id = ? OR recipient_id = ?", usrid, usrid)
     end
 end

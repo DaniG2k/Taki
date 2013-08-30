@@ -3,10 +3,9 @@ class MessagesController < ApplicationController
   
   def create
     @conversation = Conversation.find(params[:conversation_id])
-    
     # This needs to be messages.new
     @message = @conversation.messages.new(message_params)
-
+    
     if @message.save
       redirect_to conversation_path(@conversation)
     # If there are other messages in this thread, don't delete.
