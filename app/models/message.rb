@@ -1,6 +1,6 @@
 class Message < ActiveRecord::Base
-  belongs_to :users
-  belongs_to :tutors
+  belongs_to :user
+  belongs_to :tutor
   
   validates_presence_of :body, :user_id, :recipient_id
   validate :sender_and_recipient_differ

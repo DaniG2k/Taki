@@ -2,18 +2,21 @@
 
 <table>
   <tr>
+  	<th>Recipient</th>
     <th>Subject</th>
     <th>Body</th>
-    <th>Sender</th>
-    <th>Recipient</th>
+    <th>Sender ID</th>
+    <th>Recipient ID</th>
   </tr>
  
   <% @messages.each do |m| %>
-    <tr>
-      <td><%= m.subject %></td>
-      <td><%= m.body %></td>
-      <td><%= m.user_id %></td>
-      <td><%= m.recipient_id %></td>
-    </tr>
+  <% recipient = Tutor.find(m.recipient_id).user %>
+  <tr>
+  	<td><%= "#{recipient.first_name + ' ' + recipient.last_name}" %></td>
+    <td><%= m.subject %></td>
+    <td><%= m.body %></td>
+    <td><%= m.user_id %></td>
+    <td><%= m.recipient_id %></td>
+  </tr>
   <% end %>
 </table>
