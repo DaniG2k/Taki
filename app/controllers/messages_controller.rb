@@ -1,9 +1,8 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-
+  before_action :fetch_user_messages, only: [:index, :show]
+  
   def index
-    id = current_user.id.to_s
-    @messages = Message.where("user_id = ? OR recipient_id = ?", id, id)
   end
   
   def new
@@ -16,7 +15,9 @@ class MessagesController < ApplicationController
   end
   
   def show
-    @message = Message.find(params[:id])
+    @message = @messages.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to tutor_messages_path
   end
   
   def create
@@ -34,5 +35,10 @@ class MessagesController < ApplicationController
   private
     def message_params
       params.require(:message).permit(:subject, :body, :recipient_id)
+    end
+    
+    def fetch_user_messages
+      id = current_user.id.to_s
+      @messages = Message.where("user_id = ? OR recipient_id = ?", id, id)
     end
 end
