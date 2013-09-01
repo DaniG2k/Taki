@@ -1,0 +1,19 @@
+<h1>Listing messages</h1>
+ 
+<table>
+  <tr>
+    <th>Subject</th>
+    <th>Body</th>
+    <th>Sender</th>
+    <th>Recipient</th>
+  </tr>
+ 
+  <% @messages.each do |m| %>
+    <tr>
+      <td><%= m.subject %></td>
+      <td><%= m.body %></td>
+      <td><%= m.user_id %></td>
+      <td><%= m.recipient_id %></td>
+    </tr>
+  <% end %>
+</table>

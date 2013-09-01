@@ -1,32 +1,38 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
+
+  def index
+    id = current_user.id.to_s
+    @messages = Message.where("user_id = ? OR recipient_id = ?", id, id)
+  end
+  
+  def new
+    @tutor = Tutor.find(params[:tutor_id])
+    if @tutor.id == current_user.id
+      redirect_to tutor_messages_path 
+    else
+      @message = @tutor.messages.build
+    end
+  end
+  
+  def show
+    @message = Message.find(params[:id])
+  end
   
   def create
-    @conversation = Conversation.find(params[:conversation_id])
-    # This needs to be messages.new
-    @message = @conversation.messages.new(message_params)
-    
+    @tutor = Tutor.find(params[:tutor_id])
+    @message = @tutor.messages.build(message_params)
+    @message.user_id = current_user.id
+
     if @message.save
-      redirect_to conversation_path(@conversation)
-    # If there are other messages in this thread, don't delete.
+      redirect_to tutor_message_path @tutor, @message
     else
-      flash[:error] = "Message not sent."
-      if empty_thread?(@conversation.id)
-        @conversation.delete
-        redirect_to conversations_path
-      else
-        render "conversations/show"
-      end
+      render 'new'
     end
   end
   
   private
     def message_params
-      params.require(:message).permit(:subject, :body)
-    end
-    
-    def empty_thread?(convo_id)
-      threads = Message.where(conversation_id: convo_id)
-      threads.empty?
+      params.require(:message).permit(:subject, :body, :recipient_id)
     end
 end

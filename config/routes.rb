@@ -12,10 +12,8 @@ Taki::Application.routes.draw do
     
     resources :tutors do
       get 'page/:page', :action => :index, :on => :collection
-    end
-    
-    resources :conversations do
-      resources :messages, only: [:create]
+      
+      resources :messages, :only => [:index, :new, :show, :create]
     end
   end
   #match '*path', to: redirect("/#{I18n.default_locale}/%{path}")

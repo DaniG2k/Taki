@@ -1,0 +1,30 @@
+<p>
+	<% if @message.errors.any? %>
+	<strong>
+		<%= pluralize(@message.errors.count, 'error')%> prevented this message form from being delivered:
+	</strong>
+	<ul>
+		<% @message.errors.full_messages.each do |message| %>
+  	<li><%= message %></li>
+  	<% end %>
+ 	</ul>
+	<% end %>
+</p>
+
+<h1>New Message</h1>
+<%= form_for [@tutor, @message] do |f| %>
+  <p>
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject %>
+  </p>
+ 
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to 'Back', tutor_messages_path %>
