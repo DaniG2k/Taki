@@ -7,6 +7,6 @@ class Tutor < ActiveRecord::Base
   validates_length_of :description, maximum: 1000, allow_blank: true
   # This can be used for SEO friendliness
   #def to_param
-  #  "#{user.first_name}".parameterize
+  #  "#{user.fiMrst_name}".parameterize
   #end
 end

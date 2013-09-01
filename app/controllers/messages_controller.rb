@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
   before_action :fetch_user_messages, only: [:index, :show]
   
   def index
+    @messages = @messages.group('recipient_id')
   end
   
   def new
