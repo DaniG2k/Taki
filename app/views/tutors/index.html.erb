@@ -1,6 +1,14 @@
 <% title 'Tutors List' %>
 <h1>Tutors#index</h1>
 
+<p>
+<% if @tutor %>
+	<%= link_to 'Edit Tutor Info', edit_tutor_path(@tutor) %>
+<% else %>
+	<%= link_to 'Become a tutor', new_tutor_path %>
+<% end %>
+</p>
+
 <%= paginate @tutors %>
 
 <table>
@@ -22,9 +30,3 @@
 </table>
 
 <%= paginate @tutors %>
-<br />
-<% if @tutor %>
-	<%= link_to 'Edit Tutor', edit_tutor_path(@tutor) %>
-<% else %>
-	<%= link_to 'Become a tutor', new_tutor_path %>
-<% end %>
