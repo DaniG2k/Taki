@@ -1,9 +1,10 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :fetch_user_messages, only: [:index, :show]
+  before_action :fetch_user_messages, only: [:show]
   
   def index
-    @messages = @messages.group('recipient_id')
+    id = current_user.id
+    @messages = Message.includes(:tutor).where("user_id = ? OR recipient_id = ?", id, id).group('recipient_id')
   end
   
   def new
@@ -39,7 +40,7 @@ class MessagesController < ApplicationController
     end
     
     def fetch_user_messages
-      id = current_user.id.to_s
+      id = current_user.id
       @messages = Message.where("user_id = ? OR recipient_id = ?", id, id)
     end
 end

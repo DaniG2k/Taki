@@ -10,9 +10,9 @@
   </tr>
  
   <% @messages.each do |m| %>
-  <% recipient = Tutor.find(m.recipient_id).user %>
+  <!-- recipient = Tutor.find(m.recipient_id).user -->
   <tr>
-  	<td><%= "#{recipient.first_name + ' ' + recipient.last_name}" %></td>
+  	<td><%= m.tutor.user.fullname %></td>
     <td><%= m.subject %></td>
     <td><%= m.body %></td>
     <td><%= m.user_id %></td>

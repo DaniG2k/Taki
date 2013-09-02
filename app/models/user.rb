@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_one :tutor, dependent: :destroy
   has_many :messages
-  #before_validation :update_tutor
   
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -11,17 +10,14 @@ class User < ActiveRecord::Base
   
   mount_uploader :avatar, AvatarUploader
   
-  # Validations
   validates_acceptance_of :terms
-  #validates_associated :tutor, if: :is_tutor?
   validate :user_age, on: :update
   
+  def fullname
+    "#{first_name} #{last_name}"
+  end
+  
   private
-    #def update_tutor
-      # Destroy tutor object if the user is currently
-      # a tutor, and the is_tutor checkbox is unticked.
-      #self.tutor.destroy if(self.tutor and !self.is_tutor)
-    #end
     def user_age
       age = self.birthday
       if age.nil?
