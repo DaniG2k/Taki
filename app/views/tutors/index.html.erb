@@ -3,21 +3,26 @@
 
 <%= paginate @tutors %>
 
-<ol>
-<% @tutors.each do |tutor| %>
-	<li>
-		<strong><%= link_to "#{tutor.user.fullname}", new_tutor_message_path(tutor) %></strong>
-		<ul>
-			<li>About: <%= tutor.description%></li>
-			<li>Rate: <%= tutor.rate %></li>
-			<li>Country: <%= tutor.country %></li>
-		</ul>
-	</li>
-<% end %>
-</ol>
+<table>
+	<tr>
+		<th>Name</th>
+		<th><%= table_sort 'rate' %></th>
+		<th><%= table_sort 'country' %></th>
+		<th>About</th>	
+	</tr>
+	
+	<% @tutors.each do |tutor| %>
+	<tr>
+		<td><strong><%= link_to "#{tutor.user.fullname}", new_tutor_message_path(tutor) %></strong></td>
+		<td><%= tutor.rate %></td>
+		<td><%= tutor.country %></td>
+		<td><%= tutor.description %></td>
+	</tr>
+	<% end %>
+</table>
 
 <%= paginate @tutors %>
-
+<br />
 <% if @tutor %>
 	<%= link_to 'Edit Tutor', edit_tutor_path(@tutor) %>
 <% else %>

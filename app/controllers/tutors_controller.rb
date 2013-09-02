@@ -1,9 +1,10 @@
 class TutorsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_tutor, only: [:index, :update, :edit, :show, :destroy]
+  helper_method :sort_column, :sort_direction
   
   def index
-    @tutors = Tutor.all.page(params[:page]).per(10)
+    @tutors = Tutor.all.order(sort_column + " " + sort_direction).page(params[:page]).per(15)
   end
   
   def new
@@ -52,5 +53,13 @@ class TutorsController < ApplicationController
     
     def get_tutor
       @tutor = current_user.tutor
+    end
+    
+    def sort_column
+      %w(rate country).include?(params[:sort]) ? params[:sort] : "rate"
+    end
+    
+    def sort_direction
+      %w(asc desc).include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
