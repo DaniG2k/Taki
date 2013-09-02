@@ -1,10 +1,9 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :fetch_user_messages, only: [:show]
   
   def index
     id = current_user.id
-    @messages = Message.includes(:tutor).where("user_id = ? OR recipient_id = ?", id, id).group('recipient_id')
+    @messages = Message.includes(:tutor).where("user_id = ? OR tutor_id = ?", id, id).group('tutor_id')
   end
   
   def new
@@ -17,7 +16,8 @@ class MessagesController < ApplicationController
   end
   
   def show
-    @message = @messages.find(params[:id])
+    id = current_user.id
+    @message = Message.where("user_id = ? OR tutor_id = ?", id, id).find(params[:id])
   rescue ActiveRecord::RecordNotFound
     redirect_to tutor_messages_path
   end
@@ -36,11 +36,6 @@ class MessagesController < ApplicationController
   
   private
     def message_params
-      params.require(:message).permit(:subject, :body, :recipient_id)
-    end
-    
-    def fetch_user_messages
-      id = current_user.id
-      @messages = Message.where("user_id = ? OR recipient_id = ?", id, id)
+      params.require(:message).permit(:subject, :body, :tutor_id)
     end
 end

@@ -6,7 +6,7 @@
 <ol>
 <% @tutors.each do |tutor| %>
 	<li>
-		<strong><%= link_to "#{tutor.user.first_name} #{tutor.user.last_name}", new_tutor_message_path(tutor) %></strong>
+		<strong><%= link_to "#{tutor.user.fullname}", new_tutor_message_path(tutor) %></strong>
 		<ul>
 			<li>About: <%= tutor.description%></li>
 			<li>Rate: <%= tutor.rate %></li>
