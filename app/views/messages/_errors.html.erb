@@ -1,12 +1,12 @@
-<% if @message.errors.any? %>
-	<p>
-		<%= flash[:error] %><br />
-		<%= pluralize(@message.errors.count, 'error')%>
-		prevented this message from being delivered:
-		<ul>
-			<% @message.errors.full_messages.each do |message| %>
-			<li><%= message %></li>
-			<% end %>
-	 	</ul>
-	</p>
-<% end %>
+<p>
+	<% if @message.errors.any? %>
+	<%= flash[:error] %><br />
+	<%= pluralize(@message.errors.count, 'error')%>
+	prevented this message form from being delivered:
+	<ul>
+		<% @message.errors.full_messages.each do |message| %>
+  		<li><%= message %></li>
+  		<% end %>
+ 	 </ul>
+	<% end %>
+</p>
