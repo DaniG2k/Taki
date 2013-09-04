@@ -2,9 +2,5 @@
 
 FactoryGirl.define do
   factory :message do
-    user_id 1
-    conversation_id 1
-    subject "MyString"
-    body "MyText"
   end
 end

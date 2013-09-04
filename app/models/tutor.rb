@@ -1,6 +1,5 @@
 class Tutor < ActiveRecord::Base
   belongs_to :user
-  has_many :messages
   
   validates_presence_of :user_id
   validates :rate, presence: true, numericality: true, format: { :with => /\A\d{1,5}(\.\d{0,2})?\z/ }

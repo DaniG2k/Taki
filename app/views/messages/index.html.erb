@@ -1,24 +1,19 @@
-<h1>Inbox</h1>
-<p>
-	<%= flash[:error] %>
-</p>
-
+<h1>Listing messages</h1>
+ 
 <table>
   <tr>
-  	<th>Recipient</th>
     <th>Subject</th>
     <th>Body</th>
-    <th>Sender ID</th>
-    <th>Recipient ID</th>
+    <th>Sender</th>
+    <th>Recipient</th>
   </tr>
  
-  <% @messages.each do |m| %>
-  <tr>
-  	<td><%= m.tutor.user.fullname %></td>
-    <td><%= m.subject %></td>
-    <td><%= m.body %></td>
-    <td><%= m.user_id %></td>
-    <td><%= m.tutor_id %></td>
-  </tr>
+  <% @messages.each do |message| %>
+    <tr>
+      <td><%= message.subject %></td>
+      <td><%= message.body %></td>
+      <td><%= message.sender_id %></td>
+      <td><%= message.recipient_id %></td>
+    </tr>
   <% end %>
 </table>
