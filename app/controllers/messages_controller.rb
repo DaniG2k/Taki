@@ -38,6 +38,6 @@ class MessagesController < ApplicationController
     def catch_not_found
       yield
     rescue ActiveRecord::RecordNotFound
-      redirect_to tutors_path, flash: { :error => "Sorry, that recipient was not found :(" }
+      redirect_to tutors_path, flash: { :notice => "Sorry, that recipient was not found :(" }
     end
 end

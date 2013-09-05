@@ -27,6 +27,9 @@
 	<%= link_to_unless_current t('language.ja'), locale: 'ja' %> |
 	<%= link_to_unless_current t('language.ko'), locale: 'ko' %>
 </div>
+<div>
+	<%= link_to_unless_current t('messages.index.title'), messages_path %>
+</div>
 
 <%= yield %>
 
