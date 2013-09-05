@@ -5,7 +5,7 @@
   	<% if content_for? :title %>
   		<%= yield :title %>
   	<% else %>
-  		Taki
+  		<%= t('website.name') %>
   	<% end %>
   </title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -23,9 +23,9 @@
 <% end %>
 <div>
 	Language:
-	<%= link_to_unless_current( t('language.english'), locale: 'en') %> |
-	<%= link_to_unless_current( t('language.japanese'), locale: 'ja') %> |
-	<%= link_to_unless_current( t('language.korean'), locale: 'ko') %>
+	<%= link_to_unless_current t('language.english'), locale: 'en' %> |
+	<%= link_to_unless_current t('language.japanese'), locale: 'ja' %> |
+	<%= link_to_unless_current t('language.korean'), locale: 'ko' %>
 </div>
 
 <%= yield %>
