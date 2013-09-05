@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-  #around_action :catch_not_found
+  around_action :catch_not_found
   
   def index
     id = current_user.id
@@ -8,22 +8,23 @@ class MessagesController < ApplicationController
   end
   
   def new
-    @tutor = Tutor.find(params[:tutor_id])
+    @tutor = Tutor.find(params[:recipient_id]).user
+    
     if @tutor.id == current_user.id
-      redirect_to tutor_messages_path
+      redirect_to tutors_path
     else
       @message = Message.new
     end
   end
   
   def create
-    @tutor = Tutor.find(params[:tutor_id])
+    @tutor = Tutor.find(params[:recipient_id]).user
     @message = Message.new(message_params)
     @message.sender = current_user
-    @message.recipient = @tutor.user
+    @message.recipient = @tutor
 
     if @message.save
-      redirect_to tutor_messages_path
+      redirect_to messages_path
     else
       render 'new'
     end
@@ -37,6 +38,6 @@ class MessagesController < ApplicationController
     def catch_not_found
       yield
     rescue ActiveRecord::RecordNotFound
-      redirect_to tutor_messages_path, :flash => { :error => "Sorry, record not found." }
+      redirect_to tutors_path, flash: { :error => "Sorry, that recipient was not found :(" }
     end
 end

@@ -6,14 +6,14 @@ Taki::Application.routes.draw do
     root 'home#index'
     
     devise_for :users, controllers: {registrations: "registrations"}
-    
+        
     get "about", to: "home#about"
     get "users/show"
     
     resources :tutors do
       get 'page/:page', :action => :index, :on => :collection
-      resources :messages
     end
+    resources :messages
   end
   #match '*path', to: redirect("/#{I18n.default_locale}/%{path}")
   #match '', to: redirect("/#{I18n.default_locale}")

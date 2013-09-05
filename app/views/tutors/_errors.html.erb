@@ -1,4 +1,8 @@
 <p>
+	<% if flash[:error] %>
+		<%= flash[:error] %>
+	<% end %>
+	
 	<% if @tutor.errors.any? %>
 	<%= flash[:error] %><br />
 	<%= pluralize(@tutor.errors.count, 'error')%>

@@ -3,7 +3,7 @@
 
 <%= render "errors" %>
 
-<%= form_for([@tutor, @message]) do |m| %>
+<%= form_for @message, url: messages_path(recipient_id: params[:recipient_id]) do |m| %>
   <p>
     <%= m.label :subject %><br>
     <%= m.text_field :subject %>
