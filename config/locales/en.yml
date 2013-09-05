@@ -23,19 +23,18 @@
 
 en:
   website:
-    name: 'Taki'
+    name: Taki
   language:
-    english: 'English'
-    chinese: 'Chinese'
-    japanese: 'Japanese'
-    korean: 'Korean'
+    en: English
+    ch: Chinese
+    ja: Japanese
+    ko: Korean
   home:
     index:
-      title: 'Taki'
-      description: 'Introduction to Taki'
+      description: Introduction to Taki
     about:
-      title: 'About'
-      description: 'Some information about Taki'
+      title: About
+      description: Some information about Taki
   views:
     pagination:
       first: "&lt; First"

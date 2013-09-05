@@ -1,18 +1,17 @@
 ja:
   website:
-    name: '滝'
+    name: 滝
   language:
-    english: '英語'
-    chinese: '中国語'
-    japanese: '日本語'
-    korean: '韓国語'
+    en: 英語
+    ch: 中国語
+    ja: 日本語
+    ko: 韓国語
   home:
     index:
-      title: '滝'
-      description: '滝の紹介'
+      description: 滝の紹介
     about:
-      title: '滝について'
-      description: '滝の明細と情報'
+      title: 滝について
+      description: 滝の明細と情報
   views:
     pagination:
       first: "&lt; 最初"
