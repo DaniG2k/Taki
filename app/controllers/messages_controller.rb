@@ -1,16 +1,16 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-  around_action :catch_not_found
+  #around_action :catch_not_found
   
   def index
     @messages = Message.all
   end
   
   def new
-    # Message requires a user object
     @tutor = Tutor.find(params[:tutor_id])
     if @tutor.id == current_user.id
       redirect_to tutor_messages_path
+      #tutor_message+path @tutor, @message goes to the show action
     else
       @message = Message.new
     end
