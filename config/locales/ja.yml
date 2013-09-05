@@ -1,4 +1,9 @@
 ja:
+  language:
+    english: '英語'
+    chinese: '中国語'
+    japanese: '日本語'
+    korean: '韓国語'
   home:
     index:
       title: '滝'
