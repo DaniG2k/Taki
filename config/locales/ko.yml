@@ -12,6 +12,11 @@ ko:
     about:
       title: 타키에 대해
       description: 타키의 명세와 정보
+  messages:
+    index:
+      title: 받은 편지
+    new:
+      title: 새 메시지
   views:
     pagination:
       first: "&lt; 처음"

@@ -12,6 +12,11 @@ ja:
     about:
       title: 滝について
       description: 滝の明細と情報
+  messages:
+    index:
+      title: 受信トレイ
+    new:
+      title: 新規メッセージ
   views:
     pagination:
       first: "&lt; 最初"

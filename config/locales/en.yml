@@ -35,6 +35,11 @@ en:
     about:
       title: About
       description: Some information about Taki
+  messages:
+    index:
+      title: Inbox
+    new:
+      title: New Messages
   views:
     pagination:
       first: "&lt; First"

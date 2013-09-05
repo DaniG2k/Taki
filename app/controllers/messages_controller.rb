@@ -3,14 +3,14 @@ class MessagesController < ApplicationController
   #around_action :catch_not_found
   
   def index
-    @messages = Message.all
+    id = current_user.id
+    @messages = Message.where('sender_id = ? or recipient_id = ?', id, id)
   end
   
   def new
     @tutor = Tutor.find(params[:tutor_id])
     if @tutor.id == current_user.id
       redirect_to tutor_messages_path
-      #tutor_message+path @tutor, @message goes to the show action
     else
       @message = Message.new
     end
