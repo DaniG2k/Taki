@@ -9,7 +9,7 @@ class MessagesController < ApplicationController
   
   def new
     @tutor = Tutor.find(params[:recipient_id]).user
-    if @tutor.id == current_user.id
+    if @tutor == current_user
       redirect_to tutors_path
     else
       @message = Message.new

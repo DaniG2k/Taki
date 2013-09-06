@@ -17,6 +17,9 @@ ja:
       title: 受信トレイ
     new:
       title: 新規メッセージ
+  tutors:
+    index:
+      title: チューター
   views:
     pagination:
       first: "&lt; 最初"

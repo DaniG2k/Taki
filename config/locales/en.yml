@@ -40,6 +40,9 @@ en:
       title: Inbox
     new:
       title: New Messages
+  tutors:
+    index:
+      title: Tutors
   views:
     pagination:
       first: "&lt; First"

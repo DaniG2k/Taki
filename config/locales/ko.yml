@@ -17,6 +17,9 @@ ko:
       title: 받은 편지
     new:
       title: 새 메시지
+  tutors:
+    index:
+      title: 교사
   views:
     pagination:
       first: "&lt; 처음"
