@@ -7,6 +7,7 @@
     <th>Body</th>
     <th>Sender</th>
     <th>Recipient</th>
+    <th>Submitted</th>
   </tr>
  
   <% @messages.each do |message| %>
@@ -15,6 +16,7 @@
       <td><%= message.body %></td>
       <td><%= message.sender_id %></td>
       <td><%= message.recipient_id %></td>
+      <td><%= message.created_at %></td>
     </tr>
   <% end %>
 </table>

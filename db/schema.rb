@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130906084632) do
+ActiveRecord::Schema.define(version: 20130906180950) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20130906084632) do
   create_table "tutors", force: true do |t|
     t.text     "description"
     t.decimal  "rate",        precision: 6, scale: 2
-    t.integer  "user_id",     null: false
+    t.integer  "user_id",                             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "country"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20130906084632) do
     t.string   "gender"
     t.string   "avatar"
     t.string   "avatar_cache"
+    t.string   "time_zone"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

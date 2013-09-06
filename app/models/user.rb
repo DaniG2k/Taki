@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   
   validates_acceptance_of :terms
   validate :user_age, on: :update
+  validates_inclusion_of :time_zone, in: ActiveSupport::TimeZone.zones_map(&:name)
   
   def fullname
     "#{first_name} #{last_name}"

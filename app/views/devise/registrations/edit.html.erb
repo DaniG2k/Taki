@@ -31,6 +31,11 @@
 	</div>
 
 	<div>
+		<%= f.label :time_zone %><br />
+		<%= f.time_zone_select :time_zone %>
+	</div>
+
+	<div>
 		<%= image_tag(resource.avatar_url) if resource.avatar? %>
 		<%= f.file_field :avatar %>
 		<%= f.hidden_field :avatar_cache %>
