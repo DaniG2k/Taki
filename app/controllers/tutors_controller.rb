@@ -4,7 +4,7 @@ class TutorsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
   def index
-    @tutors = Tutor.all.order(sort_column + " " + sort_direction).page(params[:page]).per(15)
+    @tutors = Tutor.all.includes(:user).order(sort_column + " " + sort_direction).page(params[:page]).per(15)
   end
   
   def new
