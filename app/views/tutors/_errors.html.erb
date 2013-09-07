@@ -1,11 +1,5 @@
 <p>
-	<% if flash[:error] %>
-		<%= flash[:error] %>
-	<% elsif flash[:notice] %>
-		<%= flash[:notice] %>
-	<% end %>
-	
-	<% if @tutor.errors.any? %>
+	<% if @tutor and @tutor.errors.any? %>
 	<%= flash[:error] %><br />
 	<%= pluralize(@tutor.errors.count, 'error')%>
 	prevented this tutor form from being saved:

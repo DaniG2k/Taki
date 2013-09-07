@@ -8,10 +8,10 @@ class TutorsController < ApplicationController
   end
   
   def new
-    if current_user.tutor.blank?
-      @tutor = current_user.create_tutor #build blank tutor object
-    else
+    if current_user.tutor
       get_tutor
+    else
+      @tutor = current_user.build_tutor
     end
   end
   
@@ -21,8 +21,7 @@ class TutorsController < ApplicationController
       flash[:success] = 'Tutor profile created!'
       redirect_to @tutor
     else
-      flash[:error] = 'Tutor profile not created.'
-      render "new"
+      render 'new'
     end
   end
 
