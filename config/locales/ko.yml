@@ -19,7 +19,8 @@ ko:
       title: 새 메시지
   tutors:
     index:
-      title: 교사
+      title: 튜터
+      tutor_name: 튜터의 이름
   views:
     pagination:
       first: "&lt; 처음"

@@ -43,6 +43,7 @@ en:
   tutors:
     index:
       title: Tutors
+      tutor_name: Tutor Name
   views:
     pagination:
       first: "&lt; First"
