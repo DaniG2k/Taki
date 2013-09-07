@@ -8,7 +8,7 @@
   		<%= t('website.name') %>
   	<% end %>
   </title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -17,8 +17,9 @@
 	Logged in as <strong><%= current_user.email %></strong>.
 	<%= link_to_unless_current 'Edit profile', edit_user_registration_path %> |
 	
-	<% if current_user.tutor and @tutor.id.present? %>
-		<%= link_to_unless_current 'Edit Tutor Info', edit_tutor_path(@tutor) %> |
+	<!-- TODO Make an is_tutor boolean in the User model -->
+	<% if current_user.is_tutor? %>
+		<%= link_to_unless_current 'Edit Tutor Info', edit_tutor_path(current_user.tutor) %> |
 	<% else %>
 		<%= link_to_unless_current 'Become a tutor', new_tutor_path %> |
 	<% end %>

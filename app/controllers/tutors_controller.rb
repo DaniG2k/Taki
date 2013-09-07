@@ -14,6 +14,7 @@ class TutorsController < ApplicationController
   def create
     @tutor = current_user.build_tutor(tutor_params)
     if @tutor.save
+      set_user_is_tutor
       flash[:success] = 'Tutor profile created!'
       redirect_to @tutor
     else
@@ -29,6 +30,7 @@ class TutorsController < ApplicationController
   
   def update    
     if @tutor.update_attributes(tutor_params)
+      set_user_is_tutor
       flash[:success] = 'Tutor profile updated!'
       redirect_to @tutor
     else
@@ -38,6 +40,7 @@ class TutorsController < ApplicationController
   
   def destroy
     @tutor.destroy
+    current_user.update_attribute(:is_tutor, false)
     redirect_to tutors_path
   end
   
@@ -56,5 +59,11 @@ class TutorsController < ApplicationController
     
     def sort_direction
       %w(asc desc).include?(params[:direction]) ? params[:direction] : "asc"
+    end
+    
+    def set_user_is_tutor
+      unless current_user.is_tutor?
+        current_user.update_attribute(:is_tutor, true)
+      end
     end
 end
