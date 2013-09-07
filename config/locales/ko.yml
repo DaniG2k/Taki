@@ -82,6 +82,7 @@ ko:
     - :day
   datetime:
     distance_in_words:
+      ago: 전
       about_x_hours:
         one: 약 한 시간
         other: 약 %{count}시간
@@ -228,7 +229,7 @@ ko:
       tutor:
         country: 국적
         rate: 가격
-        about: 상세 정보
+        description: 상세 정보
       message:
         subject: 제목
         body: 메시지

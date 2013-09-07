@@ -3,11 +3,11 @@
  
 <table>
   <tr>
-    <th><%= t 'activerecord.attributes.message.subject' %></th>
-    <th><%= t 'activerecord.attributes.message.body' %></th>
-    <th><%= t 'activerecord.attributes.message.sender' %></th>
-    <th><%= t 'activerecord.attributes.message.recipient' %></th>
-    <th><%= t 'activerecord.attributes.message.submitted' %></th>
+    <th><%= t :subject, scope: 'activerecord.attributes.message' %></th>
+    <th><%= t :body, scope: 'activerecord.attributes.message' %></th>
+    <th><%= t :sender, scope: 'activerecord.attributes.message' %></th>
+    <th><%= t :recipient, scope: 'activerecord.attributes.message' %></th>
+    <th><%= t :submitted, scope: 'activerecord.attributes.message' %></th>
   </tr>
  
   <% @messages.each do |message| %>
@@ -16,7 +16,9 @@
       <td><%= message.body %></td>
       <td><%= message.sender_id %></td>
       <td><%= message.recipient_id %></td>
-      <td><%= message.created_at %></td>
+      <td>
+      	<%= "#{distance_of_time_in_words_to_now(message.created_at)} #{t(:ago, scope: 'datetime.distance_in_words')}" %>
+      </td>
     </tr>
   <% end %>
 </table>

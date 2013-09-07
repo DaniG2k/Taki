@@ -105,6 +105,7 @@ en:
     - :year
   datetime:
     distance_in_words:
+      ago: ago
       about_x_hours:
         one: about 1 hour
         other: about %{count} hours

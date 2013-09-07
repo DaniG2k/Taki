@@ -82,6 +82,7 @@ ja:
     - :day
   datetime:
     distance_in_words:
+      ago: 前
       about_x_hours:
         one: 約1時間
         other: 約%{count}時間
