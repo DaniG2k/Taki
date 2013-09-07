@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   
   validates_acceptance_of :terms
   validate :user_age, on: :update
+  # Remove on: :update to have this validation on all pages.
   validates_inclusion_of :time_zone, on: :update, in: ActiveSupport::TimeZone.zones_map(&:name)
   
   def fullname
