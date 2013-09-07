@@ -265,7 +265,7 @@ en:
       tutor:
         country: Country
         rate: Rate
-        about: About
+        description: Description
       message:
         subject: Subject
         body: Body

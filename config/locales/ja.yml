@@ -232,7 +232,7 @@ ja:
       tutor:
         country: 国籍
         rate: 料金
-        about: 詳細情報
+        description: 詳細情報
       message:
         subject: 件名
         body: メッセージ

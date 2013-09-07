@@ -1,14 +1,6 @@
 <% title t '.title' %>
 <h1><%= t '.title' %></h1>
 
-<p>
-<% if @tutor %>
-	<%= link_to 'Edit Tutor Info', edit_tutor_path(@tutor) %>
-<% else %>
-	<%= link_to 'Become a tutor', new_tutor_path %>
-<% end %>
-</p>
-
 <%= render "errors" %>
 
 <%= paginate @tutors %>
@@ -17,7 +9,7 @@
 		<th>Name</th>
 		<th><%= table_sort( :rate, t('activerecord.attributes.tutor.rate') ) %></th>
 		<th><%= table_sort( :country, t('activerecord.attributes.tutor.country') ) %></th>
-		<th><%= t 'activerecord.attributes.tutor.about' %></th>	
+		<th><%= t 'activerecord.attributes.tutor.description' %></th>	
 	</tr>
 	
 	<% @tutors.each do |tutor| %>
