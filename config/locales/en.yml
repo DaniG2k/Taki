@@ -258,5 +258,19 @@ en:
     errors:
       <<: *errors
   activerecord:
+    models:
+      tutor: Tutor
+      message: Message
+    attributes:
+      tutor:
+        country: Country
+        rate: Rate
+        about: About
+      message:
+        subject: Subject
+        body: Body
+        sender: Sender
+        recipient: Recipient
+        submitted: Submitted
     errors:
       <<: *errors

@@ -3,11 +3,11 @@
  
 <table>
   <tr>
-    <th>Subject</th>
-    <th>Body</th>
-    <th>Sender</th>
-    <th>Recipient</th>
-    <th>Submitted</th>
+    <th><%= t 'activerecord.attributes.message.subject' %></th>
+    <th><%= t 'activerecord.attributes.message.body' %></th>
+    <th><%= t 'activerecord.attributes.message.sender' %></th>
+    <th><%= t 'activerecord.attributes.message.recipient' %></th>
+    <th><%= t 'activerecord.attributes.message.submitted' %></th>
   </tr>
  
   <% @messages.each do |message| %>
