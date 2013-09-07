@@ -1,6 +1,6 @@
 class TutorsController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_tutor, only: [:index, :update, :edit, :show, :destroy]
+  before_action :get_tutor, except: :create
   helper_method :sort_column, :sort_direction
   
   def index
@@ -8,11 +8,7 @@ class TutorsController < ApplicationController
   end
   
   def new
-    if current_user.tutor
-      get_tutor
-    else
-      @tutor = current_user.build_tutor
-    end
+    @tutor = current_user.build_tutor unless @tutor
   end
   
   def create

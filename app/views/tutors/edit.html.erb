@@ -16,4 +16,5 @@
 <% end %>
 <p>
 	<%= link_to 'Back', tutors_path %>
+	<%= link_to 'Destroy Tutor', tutor_path(@tutor), method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
