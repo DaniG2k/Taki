@@ -4,10 +4,10 @@
 <%= render "errors" %>
 
 <%= form_for @tutor do |f| %>
-  <%= f.label :description, t('activerecord.attributes.tutor.description') %><br />
+  <%= f.label :description, t(:description, scope: 'activerecord.attributes.tutor') %><br />
 	<%= f.text_area :description %><br />
 	
-	<%= f.label :rate, t('activerecord.attributes.tutor.rate') %><br />
+	<%= f.label :rate, t(:rate, scope: 'activerecord.attributes.tutor') %><br />
 	<%= f.text_field :rate %><br />
 	
 	<%= country_select(:tutor, :country) %><br />
