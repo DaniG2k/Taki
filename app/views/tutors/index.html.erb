@@ -7,9 +7,9 @@
 <table>
 	<tr>
 		<th><%= t('.tutor_name') %></th>
-		<th><%= table_sort( :rate, t(:rate, scope: 'activerecord.attributes.tutor') ) %></th>
-		<th><%= table_sort( :country, t(:country, scope: 'activerecord.attributes.tutor') ) %></th>
-		<th><%= t(:description, scope: 'activerecord.attributes.tutor') %></th>	
+		<th><%= table_sort('rate', t(:rate, scope: 'activerecord.attributes.tutor') ) %></th>
+		<th><%= table_sort('country', t(:country, scope: 'activerecord.attributes.tutor') ) %></th>
+		<th><%= t('description', scope: 'activerecord.attributes.tutor') %></th>	
 	</tr>
 	
 	<% @tutors.each do |tutor| %>

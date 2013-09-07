@@ -17,7 +17,6 @@
 	Logged in as <strong><%= current_user.email %></strong>.
 	<%= link_to_unless_current 'Edit profile', edit_user_registration_path %> |
 	
-	<!-- TODO Make an is_tutor boolean in the User model -->
 	<% if current_user.is_tutor? %>
 		<%= link_to_unless_current 'Edit Tutor Info', edit_tutor_path(current_user.tutor) %> |
 	<% else %>

@@ -8,9 +8,9 @@ module ApplicationHelper
   end
   
   def table_sort(column, title = nil)
-    title ||= column.titleize
+    title ||= column.to_s.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
-    direction = column == sort_column && sort_direction == 'asc' ? 'desc' : 'asc'
+    direction = column == sort_column && sort_direction == "asc" ? "desc" : "asc"
     link_to title, {:sort => column, :direction => direction}, {:class => css_class}
     # CSS class needs to be defined for arrowup and arrowdown.
     # Check out: http://railscasts.com/episodes/228-sortable-table-columns
