@@ -22,13 +22,13 @@ class User < ActiveRecord::Base
 
   private
     def user_age
-      age = self.birthday
-      if age.nil?
+      if birthday.nil?
         errors.add(:birthday, "field required.")
       else
-        # user needs to be 18 or older
-        if age >= 18.years.ago
+        if birthday >= 18.years.ago
           errors.add(:birthday, "unaccepted. You may be a bit too young.")
+        elsif birthday < 90.years.ago
+          errors.add(:birthday, "unaccepted. Aren't you a little old for this?")
         end
       end
     end

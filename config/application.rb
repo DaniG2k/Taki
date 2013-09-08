@@ -20,7 +20,7 @@ module Taki
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/', '*.{rb,yml}')]
     # config.i18n.default_locale = :de
     
-    # Custom directories with classes and modules.
+    # Use this for adding custom directories with classes and modules
     config.autoload_paths += %W(#{config.root}/lib)
   end
 end
