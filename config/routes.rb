@@ -1,5 +1,6 @@
 Taki::Application.routes.draw do
   #get '*path' => redirect("/#{I18n.default_locale}/%{path}")
+
   get '' => redirect("/#{I18n.default_locale}")
   scope "/:locale", locale: /#{I18n.available_locales.join("|")}/ do
     # You can have the root of your site routed with "root"

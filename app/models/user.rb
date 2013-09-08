@@ -15,11 +15,11 @@ class User < ActiveRecord::Base
   validate :user_age, on: :update
   # Remove on: :update to have this validation on all pages.
   validates_inclusion_of :time_zone, on: :update, in: ActiveSupport::TimeZone.zones_map(&:name)
-  
+
   def fullname
     "#{first_name} #{last_name}"
   end
-  
+
   private
     def user_age
       age = self.birthday

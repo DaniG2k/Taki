@@ -32,7 +32,7 @@
 
 	<div>
 		<%= f.label :time_zone %><br />
-		<%= f.time_zone_select :time_zone %>
+		<%= f.time_zone_select :time_zone, nil, :model => I18nTimeZone, :include_blank => true %>
 	</div>
 
 	<div>
