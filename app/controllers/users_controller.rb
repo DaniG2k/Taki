@@ -3,6 +3,5 @@ class UsersController < ApplicationController
   
   def show
     @users = User.all
-    @tutors = Tutor.all
   end
 end
