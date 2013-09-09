@@ -9,7 +9,7 @@ Taki::Application.routes.draw do
     devise_for :users, controllers: {registrations: "registrations"}
         
     get "about", to: "home#about"
-    get "users/show"
+    get "users/index"
     
     resources :tutors do
       get 'page/:page', :action => :index, :on => :collection

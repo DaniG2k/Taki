@@ -5,6 +5,19 @@ ko:
       tutor: 튜터
       message: 메시지
     attributes:
+      user:
+        email: 이메일
+        password: 암호
+        password_confirmation: 암호
+        current_password: 현재 암호
+        first_name: 이름
+        last_name: 성
+        gender: 성별
+        gender_male: 남성
+        gender_female: 여성
+        birthday: 생년월일
+        terms: 서비스 약관
+        time_zone: 시간대
       tutor:
         country: 국적
         rate: 가격

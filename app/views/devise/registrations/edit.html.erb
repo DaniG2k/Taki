@@ -19,9 +19,9 @@
   
   <div>
 	  <%= f.radio_button :gender, "male" %>
-		<%= f.label :gender_male, "Male" %>
+		<%= f.label :gender_male, t('gender_male', scope: 'activerecord.attributes.user') %>
 		<%= f.radio_button :gender, "female" %>
-		<%= f.label :gender_female, "Female" %>
+		<%= f.label :gender_female, t('gender_female', scope: 'activerecord.attributes.user') %>
 	</div>
 	
 	<div>

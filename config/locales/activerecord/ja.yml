@@ -5,6 +5,19 @@ ja:
       tutor: チューター
       message: メッセージ
     attributes:
+      user:
+        email: メール
+        password: パスワード
+        password_confirmation: パスワード
+        current_password: 現在のパスワード
+        first_name: ファーストネーム
+        last_name: ラストネーム
+        gender: 性
+        gender_male: 男性
+        gender_female: 女性
+        birthday: 生年月日
+        terms: 利用規約
+        time_zone: 時間帯
       tutor:
         country: 国籍
         rate: 料金

@@ -13,7 +13,7 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
   
-  Accept Terms of Service
+  <%= t('terms', scope: 'activerecord.attributes.user') %>
   <%= f.check_box :terms %>
 
   <div><%= f.submit "Sign up" %></div>
