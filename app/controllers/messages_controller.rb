@@ -4,7 +4,14 @@ class MessagesController < ApplicationController
   
   def index
     id = current_user.id
-    @messages = Message.where('sender_id = ? or recipient_id = ?', id, id)
+    @messages = Message.where('sender_id = ? or recipient_id = ?', id, id).group(:recipient_id)
+  end
+  
+  def show
+    message = Message.find(params[:id])
+    sender = message.sender_id
+    recipient = message.recipient_id
+    @conversation = Message.where('(sender_id = ? AND recipient_id = ?) OR (sender_id = ? AND recipient_id = ?)', sender, recipient, recipient, sender)
   end
   
   def new

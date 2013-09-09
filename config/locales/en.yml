@@ -40,6 +40,8 @@ en:
       title: Inbox
     new:
       title: New Messages
+    show:
+      title: Conversation
   tutors:
     index:
       title: Tutors

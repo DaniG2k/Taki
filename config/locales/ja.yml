@@ -17,6 +17,8 @@ ja:
       title: 受信トレイ
     new:
       title: 新規メッセージ
+    show:
+      title: カンバセーション
   tutors:
     index:
       title: チューター
