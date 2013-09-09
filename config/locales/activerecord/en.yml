@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      user: User
+      tutor: Tutor
+      message: Message
+    attributes:
+      tutor:
+        country: Country
+        rate: Rate
+        description: Description
+      message:
+        subject: Subject
+        body: Body
+        sender: Sender
+        recipient: Recipient
+        submitted: Submitted

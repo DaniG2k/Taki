@@ -1,0 +1,17 @@
+ko:
+  activerecord:
+    models:
+      user: 유저
+      tutor: 튜터
+      message: 메시지
+    attributes:
+      tutor:
+        country: 국적
+        rate: 가격
+        description: 상세 정보
+      message:
+        subject: 제목
+        body: 메시지
+        sender: 보내는 사람
+        recipient: 받는 사람
+        submitted: 보낸 날짜

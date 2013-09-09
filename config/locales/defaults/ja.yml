@@ -198,19 +198,5 @@ ja:
     errors:
       <<: *errors
   activerecord:
-    models:
-      tutor: チューター
-      message: メッセージ
-    attributes:
-      tutor:
-        country: 国籍
-        rate: 料金
-        description: 詳細情報
-      message:
-        subject: 件名
-        body: メッセージ
-        sender: 差出人
-        recipient: 受信者
-        submitted: 送信日
     errors:
       <<: *errors

@@ -49,7 +49,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rmagick'
 gem 'carrierwave'
-gem "country_select"
+gem 'country_select'
 gem 'kaminari'
 #gem 'i18n-timezones'
 
