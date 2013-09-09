@@ -9,6 +9,7 @@ ko:
         country: 국적
         rate: 가격
         description: 상세 정보
+        university: 대학교
       message:
         subject: 제목
         body: 메시지

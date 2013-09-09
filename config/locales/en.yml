@@ -44,3 +44,6 @@ en:
     index:
       title: Tutors
       tutor_name: Tutor Name
+  datetime:
+    distance_in_words:
+      ago: ago

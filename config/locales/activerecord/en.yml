@@ -9,6 +9,7 @@ en:
         country: Country
         rate: Rate
         description: Description
+        university: University
       message:
         subject: Subject
         body: Body
