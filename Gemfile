@@ -46,6 +46,7 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem 'devise-i18n'
 gem 'rmagick'
 gem 'carrierwave'
 gem "country_select"
