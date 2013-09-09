@@ -23,6 +23,8 @@ ko:
     index:
       title: 튜터
       tutor_name: 튜터의 이름
+    new:
+      current_country: 현재에 살고있는 나라
   datetime:
     distance_in_words:
       ago: 전

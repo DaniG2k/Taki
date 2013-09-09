@@ -46,6 +46,8 @@ en:
     index:
       title: Tutors
       tutor_name: Tutor Name
+    new:
+      current_country: Current country
   datetime:
     distance_in_words:
       ago: ago

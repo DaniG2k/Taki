@@ -9,9 +9,10 @@
 	
 	<%= f.label :rate, t(:rate, scope: 'activerecord.attributes.tutor') %><br />
 	<%= f.text_field :rate %><br />
-	
+	<br />
+	<%= t '.current_country' %><br />
 	<%= country_select(:tutor, :country) %><br />
-	
+	<br />
   <%= f.submit "Submit" %>
 <% end %>
 
