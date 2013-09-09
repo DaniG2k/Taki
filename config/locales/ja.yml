@@ -21,10 +21,3 @@ ja:
     index:
       title: チューター
       tutor_name: チューター氏名
-  views:
-    pagination:
-      first: "&lt; 最初"
-      last: "最後 &gt;"
-      previous: "&lt; 前"
-      next: "次へ &gt;"
-      truncate: "..."

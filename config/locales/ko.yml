@@ -21,10 +21,3 @@ ko:
     index:
       title: 튜터
       tutor_name: 튜터의 이름
-  views:
-    pagination:
-      first: "&lt; 처음"
-      last: "마지막 &gt;"
-      previous: "&lt; 이전"
-      next: "다음 &gt;"
-      truncate: "..."

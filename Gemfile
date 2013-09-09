@@ -45,12 +45,15 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'rails-i18n'
 gem 'devise'
 gem 'devise-i18n'
-gem 'rmagick'
-gem 'carrierwave'
 gem 'country_select'
 gem 'kaminari'
+gem 'kaminari-i18n', :git => "https://github.com/tigrish/kaminari-i18n.git"
+gem 'rmagick'
+gem 'carrierwave'
+
 #gem 'i18n-timezones'
 
 gem 'brakeman', group: :development

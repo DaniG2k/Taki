@@ -44,10 +44,3 @@ en:
     index:
       title: Tutors
       tutor_name: Tutor Name
-  views:
-    pagination:
-      first: "&lt; First"
-      last: "Last &gt;"
-      previous: "&lt; Prev"
-      next: "Next &gt;"
-      truncate: "..."
