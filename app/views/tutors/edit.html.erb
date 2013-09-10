@@ -1,5 +1,5 @@
-<% title 'Edit Tutor'%>
-<h1>Edit Tutor</h1>
+<% title t '.title' %>
+<h1><%= t '.title' %></h1>
 
 <%= render "errors" %>
 
@@ -9,9 +9,10 @@
 	
 	<%= f.label :rate, t(:rate, scope: 'activerecord.attributes.tutor') %><br />
 	<%= f.text_field :rate %><br />
-	
+	<br />
+	<%= t('current_country', scope: 'globals') %><br />
 	<%= country_select(:tutor, :country) %><br />
-  
+	<br />
   <%= f.submit "Submit" %>
 <% end %>
 <p>

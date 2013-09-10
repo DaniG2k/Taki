@@ -18,6 +18,8 @@
 	<%= link_to_unless_current 'Edit profile', edit_user_registration_path %> |
 	
 	<% if current_user.is_tutor? %>
+	<!-- TODO make a variable containing current_user.tutor -->
+		<%= link_to_unless_current 'My tutor profile', tutor_path(current_user.tutor) %> |
 		<%= link_to_unless_current 'Edit Tutor Info', edit_tutor_path(current_user.tutor) %> |
 	<% else %>
 		<%= link_to_unless_current 'Become a tutor', new_tutor_path %> |

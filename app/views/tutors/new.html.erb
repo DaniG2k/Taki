@@ -1,16 +1,16 @@
-<% title 'New Tutor'%>
-<h1>New Tutor</h1>
+<% title t '.title' %>
+<h1><%= t '.title' %></h1>
 
 <%= render "errors" %>
 
 <%= form_for @tutor do |f| %>
-  <%= f.label :description, t(:description, scope: 'activerecord.attributes.tutor') %><br />
+  <%= f.label :description, t('description', scope: 'activerecord.attributes.tutor') %><br />
 	<%= f.text_area :description %><br />
 	
-	<%= f.label :rate, t(:rate, scope: 'activerecord.attributes.tutor') %><br />
+	<%= f.label :rate, t('rate', scope: 'activerecord.attributes.tutor') %><br />
 	<%= f.text_field :rate %><br />
 	<br />
-	<%= t '.current_country' %><br />
+	<%= t('current_country', scope: 'globals') %><br />
 	<%= country_select(:tutor, :country) %><br />
 	<br />
   <%= f.submit "Submit" %>

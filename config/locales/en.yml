@@ -29,6 +29,8 @@ en:
     ch: Chinese
     ja: Japanese
     ko: Korean
+  globals:
+    current_country: Current country
   home:
     index:
       description: Introduction to Taki
@@ -47,7 +49,11 @@ en:
       title: Tutors
       tutor_name: Tutor Name
     new:
-      current_country: Current country
+      title: Become a tutor
+    edit:
+      title: Edit tutor profile
+    show:
+      title: My tutor profile
   datetime:
     distance_in_words:
       ago: ago

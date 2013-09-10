@@ -6,6 +6,8 @@ ja:
     ch: 中国語
     ja: 日本語
     ko: 韓国語
+  globals:
+    current_country: 現在に住んでいる国
   home:
     index:
       description: 滝の紹介
@@ -24,7 +26,11 @@ ja:
       title: チューター
       tutor_name: チューター氏名
     new:
-      current_country: 現在に住んでいる国
+      title: チューター登録
+    edit:
+      title: チュータープロフィール編集
+    show:
+      title: 私のチュータープロフィール
   datetime:
     distance_in_words:
       ago: 前
