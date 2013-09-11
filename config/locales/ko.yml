@@ -8,6 +8,7 @@ ko:
     ko: 한국어
   globals:
     current_country: 현재에 살고있는 나라
+    destroy_confirm: 정말 삭제 하시겠습니까?
   home:
     index:
       description: 타키의 소개

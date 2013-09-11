@@ -8,6 +8,7 @@ ja:
     ko: 韓国語
   globals:
     current_country: 現在に住んでいる国
+    destroy_confirm: 本当に削除しても宜しいですか？
   home:
     index:
       description: 滝の紹介

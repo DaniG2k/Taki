@@ -1,0 +1,5 @@
+<p>
+	<%= link_to 'Back', tutors_path %> |
+	<%= link_to_unless_current 'Edit Tutor', edit_tutor_path(@tutor) %> |
+	<%= link_to 'Destroy Tutor', tutor_path(@tutor), method: :delete, data: { confirm: "#{t('globals.destroy_confirm')}" } %>
+</p>
