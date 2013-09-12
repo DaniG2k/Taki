@@ -17,7 +17,7 @@
       <td><%= message.sender_id %></td>
       <td><%= message.recipient_id %></td>
       <td>
-      	<%= "#{distance_of_time_in_words_to_now(message.created_at)} #{t(:ago, scope: 'datetime.distance_in_words')}" %>
+      	<%= i18n_distance_of_time_in_words_to_now_with_ago(message.created_at) %>
       </td>
     </tr>
   <% end %>

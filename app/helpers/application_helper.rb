@@ -17,4 +17,17 @@ module ApplicationHelper
     # The following should work with Twitter Bootstrap
     # link_to "#{title} <i class='#{direction == "desc" ? "icon-chevron-down" : "icon-chevron-up"}'></i>".html_safe, {:sort => column, :direction => direction}, {:class => css_class}
   end
+  
+  def i18n_distance_of_time_in_words_to_now_with_ago(from_time, include_seconds_or_options = {}) 
+    ago = t(:ago, scope: 'datetime.distance_in_words')
+    if [:ja, :ko].include? I18n.locale 
+      if(from_time..from_time+60).cover? Time.zone.now
+        distance_of_time_in_words_to_now(from_time, include_seconds_or_options)
+      else
+        "#{distance_of_time_in_words_to_now(from_time, include_seconds_or_options)}#{ago}"
+      end
+    else
+      "#{distance_of_time_in_words_to_now(from_time, include_seconds_or_options)} #{ago}"
+    end
+  end
 end
