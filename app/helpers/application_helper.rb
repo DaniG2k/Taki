@@ -20,15 +20,21 @@ module ApplicationHelper
   
   def distance_of_time_in_words_to_now_with_ago(from_time, include_seconds_or_options = {}) 
     ago = t(:ago, scope: 'datetime.distance_in_words')
-    locales = [:ja]
-    if locales.include? I18n.locale 
+    locale = I18n.locale
+    locales = [:ja, :ko]
+    default_s = "#{distance_of_time_in_words_to_now(from_time, include_seconds_or_options)} #{ago}"
+    if locales.include?(locale)
       if(from_time..from_time+60).cover?(Time.zone.now)
         distance_of_time_in_words_to_now(from_time, include_seconds_or_options)
       else
-        "#{distance_of_time_in_words_to_now(from_time, include_seconds_or_options)}#{ago}"
+        if locale == :ja
+          "#{distance_of_time_in_words_to_now(from_time, include_seconds_or_options)}#{ago}"
+        else
+          default_s
+        end
       end
     else
-      "#{distance_of_time_in_words_to_now(from_time, include_seconds_or_options)} #{ago}"
+      default_s
     end
   end
 end
