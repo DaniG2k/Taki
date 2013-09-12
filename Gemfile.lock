@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/tigrish/kaminari-i18n.git
-  revision: 7be73aefc620df90a7abd4cf306332820df66be3
+  remote: https://github.com/DaniG2k/kaminari-i18n.git
+  revision: 408d2a86d5d5e26996e8eafe3a1e3def7adbd165
   specs:
     kaminari-i18n (0.0.1)
 
@@ -188,7 +188,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   country_select
-  devise
+  devise (= 3.0.0)
   devise-i18n
   factory_girl_rails (~> 4.0)
   faker

@@ -31,5 +31,4 @@ module ApplicationHelper
       "#{distance_of_time_in_words_to_now(from_time, include_seconds_or_options)} #{ago}"
     end
   end
-  
 end

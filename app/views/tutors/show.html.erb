@@ -6,9 +6,9 @@
 </p>
 
 <div>
-	<strong>Description:</strong> <%= @tutor.description%><br />
-	<strong>Rate:</strong> <%= @tutor.rate %><br />
-	<strong>Country:</strong> <%= @tutor.country %>
+	<strong><%= t(:description, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.description%><br />
+	<strong><%= t(:rate, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.rate %><br />
+	<strong><%= t(:country, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.country %>
 </div>
 
 <%= render "footer_links" %>
