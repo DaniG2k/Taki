@@ -17,7 +17,7 @@
       <td><%= message.sender_id %></td>
       <td><%= message.recipient_id %></td>
       <td>
-      	<%= i18n_distance_of_time_in_words_to_now_with_ago(message.created_at) %>
+      	<%= distance_of_time_in_words_to_now_with_ago(message.created_at) %>
       </td>
     </tr>
   <% end %>
