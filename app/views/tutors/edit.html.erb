@@ -13,6 +13,13 @@
 	<%= t('current_country', scope: 'globals') %><br />
 	<%= country_select(:tutor, :country) %><br />
 	<br />
+	
+	<%= f.fields_for :educational_experiences do |builder| %>
+		<%= render 'educational_experience_fields', f: builder %>
+	<% end %>
+	<%= link_to_add_fields "Add field", f, :educational_experiences %>
+	<br />
+  
   <%= f.submit "Submit" %>
 <% end %>
 

@@ -1,7 +1,7 @@
 class Tutor < ActiveRecord::Base
   belongs_to :user
   has_many :educational_experiences, class_name: "TutorEducation"
-  accepts_nested_attributes_for :educational_experiences, dependent: :delete_all
+  accepts_nested_attributes_for :educational_experiences, allow_destroy: true
  
   
   validates_presence_of :user_id
