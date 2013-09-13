@@ -1,6 +1,6 @@
 class Tutor < ActiveRecord::Base
   belongs_to :user
-  has_many :educational_experiences, class_name: "TutorEducation"
+  has_many :educational_experiences
   accepts_nested_attributes_for :educational_experiences, allow_destroy: true
  
   

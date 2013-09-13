@@ -9,6 +9,9 @@
 	<strong><%= t(:description, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.description%><br />
 	<strong><%= t(:rate, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.rate %><br />
 	<strong><%= t(:country, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.country %>
+	<%= @tutor.educational_experiences.university %><br />
+	<%= @tutor.educational_experiences.major %><br />
+	<%= @tutor.educational_experiences.minor %><br />
 </div>
 
 <%= render "footer_links" %>

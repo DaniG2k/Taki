@@ -28,7 +28,7 @@ class TutorsController < ApplicationController
   def edit
   end
   
-  def update    
+  def update
     if @tutor.update_attributes(tutor_params)
       set_user_is_tutor
       flash[:success] = 'Tutor profile updated!'
@@ -46,7 +46,8 @@ class TutorsController < ApplicationController
   
   private
     def tutor_params
-      params.require(:tutor).permit(:id, :description, :rate, :country)
+      params.require(:tutor).permit(:id, :description, :rate, :country,
+        educational_experiences_attributes: [:university, :major, :minor])
     end
     
     def get_tutor
