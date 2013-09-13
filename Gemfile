@@ -50,10 +50,9 @@ gem 'devise', '3.0.0'
 gem 'devise-i18n'
 gem 'country_select'
 gem 'kaminari'
-gem 'kaminari-i18n', :git => "https://github.com/DaniG2k/kaminari-i18n.git"
+gem 'kaminari-i18n', :git => "https://github.com/tigrish/kaminari-i18n.git"
 gem 'rmagick'
 gem 'carrierwave'
-gem 'money-rails'
 
 #gem 'i18n-timezones'
 

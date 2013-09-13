@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130907185829) do
+ActiveRecord::Schema.define(version: 20130913095641) do
 
   create_table "messages", force: true do |t|
     t.string   "subject"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20130907185829) do
     t.integer  "sender_id",    null: false
     t.integer  "recipient_id", null: false
   end
+
+  create_table "tutor_educations", force: true do |t|
+    t.string   "university"
+    t.string   "major"
+    t.string   "minor"
+    t.string   "specialization"
+    t.integer  "tutor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tutor_educations", ["tutor_id"], name: "index_tutor_educations_on_tutor_id"
 
   create_table "tutors", force: true do |t|
     t.text     "description"

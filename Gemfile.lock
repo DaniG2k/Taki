@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/DaniG2k/kaminari-i18n.git
-  revision: 408d2a86d5d5e26996e8eafe3a1e3def7adbd165
+  remote: https://github.com/tigrish/kaminari-i18n.git
+  revision: f9676a5355944f68bee0acce7e93a197fc57ec2c
   specs:
     kaminari-i18n (0.0.1)
 
@@ -100,12 +100,6 @@ GEM
     method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
-    money (5.1.1)
-      i18n (~> 0.6.0)
-    money-rails (0.8.1)
-      activesupport (>= 3.0)
-      money (~> 5.1.0)
-      railties (>= 3.0)
     multi_json (1.8.0)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -202,7 +196,6 @@ DEPENDENCIES
   jquery-ui-rails
   kaminari
   kaminari-i18n!
-  money-rails
   pry
   rails (= 4.0.0)
   rails-i18n
