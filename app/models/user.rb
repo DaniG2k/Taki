@@ -23,12 +23,12 @@ class User < ActiveRecord::Base
   private
     def user_age
       if birthday.nil?
-        errors.add(:birthday, "field required.")
+        errors.add(:birthday, "#{I18n.t(:required, scope: 'errors.messages')}")
       else
         if birthday >= 18.years.ago
-          errors.add(:birthday, "unaccepted. You may be a bit too young.")
+          errors.add(:birthday, "#{I18n.t(:too_young, scope: 'errors.messages')}")
         elsif birthday < 90.years.ago
-          errors.add(:birthday, "unaccepted. Aren't you a little old for this?")
+          errors.add(:birthday, "#{I18n.t(:too_old, scope: 'errors.messages')}")
         end
       end
     end

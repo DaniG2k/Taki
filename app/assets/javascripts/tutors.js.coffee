@@ -7,6 +7,7 @@ $(document).on 'click', 'form .remove_fields', (event) ->
   $(this).closest('fieldset').hide()
   event.preventDefault()
 
+# If having problems with css selectors try using this version instead:
 #$(document).on 'click', 'form .remove_fields', (event) ->
 #  $('input[name$="[_destroy]"]', $(this).siblings()).val('1')
 #  $(this).closest('fieldset').hide()

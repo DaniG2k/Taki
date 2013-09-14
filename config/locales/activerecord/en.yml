@@ -22,9 +22,15 @@ en:
         country: Country
         rate: Rate
         description: Description
+        education: Education
       message:
         subject: Subject
         body: Body
         sender: Sender
         recipient: Recipient
         submitted: Submitted
+  errors:
+    messages:
+      required: can't be blank.
+      too_young: unaccepted. You may be a bit too young.
+      too_old: unaccepted. Aren't you a little old for this?

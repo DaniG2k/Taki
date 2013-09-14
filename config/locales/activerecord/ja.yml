@@ -22,9 +22,15 @@ ja:
         country: 国籍
         rate: 料金
         description: 詳細情報
+        education: 教育
       message:
         subject: 件名
         body: メッセージ
         sender: 差出人
         recipient: 受信者
         submitted: 送信日
+  errors:
+    messages:
+      required: を入力してください。
+      too_young: は不適合です。若すぎるかもしれません。
+      too_old: は不適合です。
