@@ -22,7 +22,6 @@ ja:
         country: 国籍
         rate: 料金
         description: 詳細情報
-        university: 大学
       message:
         subject: 件名
         body: メッセージ

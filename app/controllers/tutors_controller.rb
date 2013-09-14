@@ -23,6 +23,7 @@ class TutorsController < ApplicationController
   end
 
   def show
+    @educational_experiences = @tutor.educational_experiences
   end
   
   def edit
@@ -47,7 +48,9 @@ class TutorsController < ApplicationController
   private
     def tutor_params
       params.require(:tutor).permit(:id, :description, :rate, :country,
-        educational_experiences_attributes: [:university, :major, :minor])
+        educational_experiences_attributes:
+        [:id, :university, :major, :minor, :_destroy]
+      )
     end
     
     def get_tutor
