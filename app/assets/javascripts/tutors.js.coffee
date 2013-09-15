@@ -7,7 +7,7 @@ $(document).on 'click', 'form .remove_fields', (event) ->
   # so we need to go up the DOM tree.
   if $(@).closest('fieldset').siblings('fieldset').length > 0
     $(@).prev('input[type=hidden]').val('1')
-    $(@).closest('fieldset').hide()
+    $(@).closest('fieldset').fadeOut()
   event.preventDefault()
 
 # If having problems with css selectors try using this version instead:
