@@ -22,5 +22,7 @@ $(document).on 'click', 'form .add_fields', (event) ->
   if $(@).siblings('fieldset').length <= 7
     time = new Date().getTime()
     regexp = new RegExp($(@).data('id'), 'g')
-    $(@).before($(@).data('fields').replace(regexp, time))
+    fieldset = $($(@).data('fields').replace(regexp, time)).hide()
+    $(@).before(fieldset)
+    fieldset.fadeIn()
   event.preventDefault()
