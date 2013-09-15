@@ -3,18 +3,20 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'click', 'form .remove_fields', (event) ->
-  $(this).prev('input[type=hidden]').val('1')
-  $(this).closest('fieldset').hide()
+  if $(@).closest('fieldset').siblings('fieldset').length > 0
+    $(@).prev('input[type=hidden]').val('1')
+    $(@).closest('fieldset').hide()
   event.preventDefault()
 
 # If having problems with css selectors try using this version instead:
 #$(document).on 'click', 'form .remove_fields', (event) ->
-#  $('input[name$="[_destroy]"]', $(this).siblings()).val('1')
-#  $(this).closest('fieldset').hide()
-#  event.preventDefault()
+# $('input[name$="[_destroy]"]', $(this).siblings()).val('1')
+# $(this).closest('fieldset').hide()
+# event.preventDefault()
 
 $(document).on 'click', 'form .add_fields', (event) ->
-  time = new Date().getTime()
-  regexp = new RegExp($(this).data('id'), 'g')
-  $(this).before($(this).data('fields').replace(regexp, time))
+  if $(@).siblings('fieldset').length <= 5
+    time = new Date().getTime()
+    regexp = new RegExp($(@).data('id'), 'g')
+    $(@).before($(@).data('fields').replace(regexp, time))
   event.preventDefault()

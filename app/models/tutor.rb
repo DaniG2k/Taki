@@ -1,7 +1,7 @@
 class Tutor < ActiveRecord::Base
   belongs_to :user
   has_many :educational_experiences, dependent: :delete_all
-  accepts_nested_attributes_for :educational_experiences, allow_destroy: true
+  accepts_nested_attributes_for :educational_experiences, allow_destroy: true, limit: 5
  
   validates_presence_of :user_id
   validates :rate, presence: true, numericality: true, format: { :with => /\A\d{1,5}(\.\d{0,2})?\z/ }

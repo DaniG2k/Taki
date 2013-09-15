@@ -17,7 +17,7 @@ module Taki
     # config.time_zone = 'Central Time (US & Canada)'
 
     # Set locales to be made available:
-    config.i18n.available_locales = [:en, :ja, :ko, 'zh-CN', 'zh-HK', 'zh-TW']
+    config.i18n.available_locales = [:en, :ja, :ko] #TODO: 'zh-CN', 'zh-HK', 'zh-TW'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**/', '*.{rb,yml}')]
