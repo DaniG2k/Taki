@@ -55,9 +55,6 @@ en:
       title: Edit tutor profile
     show:
       title: My tutor profile
-      university: University
-      major: Major
-      minor: Minor
   datetime:
     distance_in_words:
       ago: ago

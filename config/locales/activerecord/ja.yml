@@ -23,6 +23,11 @@ ja:
         rate: 料金
         description: 詳細情報
         education: 教育
+        educational_experiences_attributes: 教育フィールド
+      educational_experiences:
+        university: 大学
+        major: 専攻
+        minor: 副専攻
       message:
         subject: 件名
         body: メッセージ
@@ -30,6 +35,8 @@ ja:
         recipient: 受信者
         submitted: 送信日
   errors:
+    educational_experiences_attributes:
+      too_many: が多すぎます。
     messages:
       required: を入力してください。
       too_young: は不適合です。若すぎるかもしれません。

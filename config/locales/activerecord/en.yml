@@ -23,13 +23,20 @@ en:
         rate: Rate
         description: Description
         education: Education
+        educational_experiences_attributes: Educational experiences
+      educational_experiences:
+        university: University
+        major: Major
+        minor: Minor
       message:
         subject: Subject
         body: Body
         sender: Sender
         recipient: Recipient
-        submitted: Submitted
+        submitted: Submitted  
   errors:
+    educational_experiences_attributes:
+      too_many: are more than necessary.
     messages:
       required: can't be blank.
       too_young: unaccepted. You may be a bit too young.

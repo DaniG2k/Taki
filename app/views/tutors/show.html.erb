@@ -14,9 +14,9 @@
 			<%= t(:education, scope: 'activerecord.attributes.tutor') %>
 		</p>
 		<% @educational_experiences.each do |education| %>
-			<strong><%= t '.university' %>:</strong> <%= education.university %><br />
-			<strong><%= t '.major' %>:</strong> <%= education.major %><br />
-			<strong><%= t '.minor' %>:</strong> <%= education.minor %><br />
+			<strong><%= t(:university, scope: 'activerecord.attributes.educational_experiences') %>:</strong> <%= education.university %><br />
+			<strong><%= t(:major, scope: 'activerecord.attributes.educational_experiences') %>:</strong> <%= education.major %><br />
+			<strong><%= t(:minor, scope: 'activerecord.attributes.educational_experiences') %>:</strong> <%= education.minor %><br />
 		<% end %>
 	</p>
 </div>

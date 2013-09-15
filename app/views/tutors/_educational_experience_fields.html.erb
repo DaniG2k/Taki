@@ -1,7 +1,7 @@
 <fieldset>
-	<%= f.text_field :university, placeholder: "#{t('tutors.show.university')}" %>
-	<%= f.text_field :major, placeholder: "#{t('tutors.show.major')}" %>
-	<%= f.text_field :minor, placeholder: "#{t('tutors.show.minor')}" %>
+	<%= f.text_field :university, placeholder: "#{t(:university, scope: 'activerecord.attributes.educational_experiences')}" %>
+	<%= f.text_field :major, placeholder: "#{t(:major, scope: 'activerecord.attributes.educational_experiences')}" %>
+	<%= f.text_field :minor, placeholder: "#{t(:minor, scope: 'activerecord.attributes.educational_experiences')}" %>
 	<%= f.hidden_field :_destroy %>
 	<%= link_to "[remove]", "#", class: "remove_fields" %>
 </fieldset>

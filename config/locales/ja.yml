@@ -32,9 +32,6 @@ ja:
       title: チュータープロフィール編集
     show:
       title: 私のチュータープロフィール
-      university: 大学
-      major: 専攻
-      minor: 副専攻
   datetime:
     distance_in_words:
       ago: 前
