@@ -3,6 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'click', 'form .remove_fields', (event) ->
+  # Needs closest because remove link is within fieldset
+  # so we need to go up the DOM tree.
   if $(@).closest('fieldset').siblings('fieldset').length > 0
     $(@).prev('input[type=hidden]').val('1')
     $(@).closest('fieldset').hide()
@@ -15,7 +17,9 @@ $(document).on 'click', 'form .remove_fields', (event) ->
 # event.preventDefault()
 
 $(document).on 'click', 'form .add_fields', (event) ->
-  if $(@).siblings('fieldset').length <= 5
+  # Doesn't need closest method since the add field link
+  # sits outside the fieldset.
+  if $(@).siblings('fieldset').length <= 7
     time = new Date().getTime()
     regexp = new RegExp($(@).data('id'), 'g')
     $(@).before($(@).data('fields').replace(regexp, time))

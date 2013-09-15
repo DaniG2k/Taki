@@ -10,11 +10,14 @@
 	<strong><%= t(:rate, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.rate %><br />
 	<strong><%= t(:country, scope: 'activerecord.attributes.tutor') %></strong> <%= @tutor.country %>
 	<p>
-	<% @educational_experiences.each do |education| %>
-		<strong><%= t '.university' %>:</strong> <%= education.university %><br />
-		<strong><%= t '.major' %>:</strong> <%= education.major %><br />
-		<strong><%= t '.minor' %>:</strong> <%= education.minor %><br />
-	<% end %>
+		<p>
+			<%= t(:education, scope: 'activerecord.attributes.tutor') %>
+		</p>
+		<% @educational_experiences.each do |education| %>
+			<strong><%= t '.university' %>:</strong> <%= education.university %><br />
+			<strong><%= t '.major' %>:</strong> <%= education.major %><br />
+			<strong><%= t '.minor' %>:</strong> <%= education.minor %><br />
+		<% end %>
 	</p>
 </div>
 
