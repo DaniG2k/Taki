@@ -1,8 +1,8 @@
 <p>
-	<% if @tutor.errors.any? %>
+	<% if @tutor and @tutor.errors.any? %>
 	<%= flash[:error] %><br />
 	
-	<%= t('errors.template.header', model: Tutor.model_name.human, count: @tutor.errors.count) %>
+	<%= t('errors.template.header', model: Tutor.model_name.human.downcase, count: @tutor.errors.count) %>
 	
 	<ul>
 		<% @tutor.errors.full_messages.each do |message| %>
