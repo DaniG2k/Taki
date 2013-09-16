@@ -15,8 +15,8 @@
 	<br />
 	
 	<%= f.label :educational_experiences, t(:education, scope: 'activerecord.attributes.tutor') %>	
-	<% f.fields_for :educational_experiences do |builder| %>
-	<%= render 'educational_experience_fields', f: builder %>
+	<%= f.fields_for :educational_experiences do |builder| %>
+		<%= render 'educational_experience_fields', f: builder %>
 	<% end %>
 	<%= link_to_add_fields "Add field", f, :educational_experiences %>
 	<br />

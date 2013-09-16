@@ -2,28 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).on 'click', 'form .remove_fields', (event) ->
-  # Needs closest because remove link is within fieldset
-  # so we need to go up the DOM tree.
-  target = $(event.target);
-  if target.closest('fieldset').siblings('fieldset').length > 0
-    target.prev('input[type=hidden]').val('1')
-    target.closest('fieldset').remove()
-  event.preventDefault()
-
-# If having problems with css selectors try using this version instead:
-#$(document).on 'click', 'form .remove_fields', (event) ->
-# $('input[name$="[_destroy]"]', $(this).siblings()).val('1')
-# $(this).closest('fieldset').hide()
-# event.preventDefault()
-
-$(document).on 'click', 'form .add_fields', (event) ->
-  # Doesn't need closest method since the add field link
-  # sits outside the fieldset.
-  if $(@).siblings('fieldset').length < 5
+jQuery ->
+  $('form').on 'click', '.remove_fields', (event) ->
+    $(this).prev('input[type=hidden]').val('1')
+    $(this).closest('fieldset').fadeOut()
+    event.preventDefault()
+    
+  $('form').on 'click', '.add_fields', (event) ->
     time = new Date().getTime()
-    regexp = new RegExp($(@).data('id'), 'g')
-    fieldset = $($(@).data('fields').replace(regexp, time)).hide()
-    $(@).before(fieldset)
-    fieldset.fadeIn()
-  event.preventDefault()
+    regexp = new RegExp($(this).data('id'), 'g')
+    field = $($(this).data('fields').replace(regexp, time)).hide()
+    $(this).before($(field).fadeIn())
+    event.preventDefault()
