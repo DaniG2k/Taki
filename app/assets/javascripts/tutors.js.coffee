@@ -5,9 +5,10 @@
 $(document).on 'click', 'form .remove_fields', (event) ->
   # Needs closest because remove link is within fieldset
   # so we need to go up the DOM tree.
-  if $(@).closest('fieldset').siblings('fieldset').length > 0
-    $(@).prev('input[type=hidden]').val('1')
-    $(@).closest('fieldset').fadeOut().remove('fieldset')
+  target = $(event.target);
+  if target.closest('fieldset').siblings('fieldset').length > 0
+    target.prev('input[type=hidden]').val('1')
+    target.closest('fieldset').remove()
   event.preventDefault()
 
 # If having problems with css selectors try using this version instead:
@@ -19,8 +20,7 @@ $(document).on 'click', 'form .remove_fields', (event) ->
 $(document).on 'click', 'form .add_fields', (event) ->
   # Doesn't need closest method since the add field link
   # sits outside the fieldset.
-  console.log($(@).siblings('fieldset'))
-  if $(@).siblings('fieldset').length < 7
+  if $(@).siblings('fieldset').length < 5
     time = new Date().getTime()
     regexp = new RegExp($(@).data('id'), 'g')
     fieldset = $($(@).data('fields').replace(regexp, time)).hide()

@@ -1,8 +1,7 @@
 class Tutor < ActiveRecord::Base
   belongs_to :user
   has_many :educational_experiences, dependent: :destroy
-  accepts_nested_attributes_for :educational_experiences,
-    allow_destroy: true,
+  accepts_nested_attributes_for :educational_experiences, allow_destroy: true,
     reject_if: lambda {|attr| %w(university major minor).all? { |val| attr[val].blank? }}
  
   validates_presence_of :user_id
@@ -19,6 +18,6 @@ class Tutor < ActiveRecord::Base
     
   # This can be used for SEO friendliness
   #def to_param
-  #  "#{user.fiMrst_name}".parameterize
+  #  "#{user.first_name}".parameterize
   #end
 end

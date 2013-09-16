@@ -1,8 +1,9 @@
 <p>
-	<% if @tutor and @tutor.errors.any? %>
+	<% if @tutor.errors.any? %>
 	<%= flash[:error] %><br />
-	<%= pluralize(@tutor.errors.count, 'error')%>
-	prevented this tutor form from being saved:
+	
+	<%= t('errors.template.header', model: Tutor.model_name.human, count: @tutor.errors.count) %>
+	
 	<ul>
 		<% @tutor.errors.full_messages.each do |message| %>
   		<li><%= message %></li>
