@@ -45,6 +45,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'jquery-turbolinks'
 gem 'rails-i18n'
 gem 'devise', '3.0.0'
 gem 'devise-i18n'

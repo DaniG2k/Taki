@@ -11,7 +11,7 @@
 <ol>
 <% @users.each do |user| %>
 	<li>
-		<strong><%= user.first_name %> <%= user.last_name %></strong>
+		<strong><%= user.fullname %></strong>
 		<ul>
 			<li><%= image_tag user.avatar_url.to_s %></li>
 			<li><%= user.email %></li>
