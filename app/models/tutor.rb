@@ -7,11 +7,25 @@ class Tutor < ActiveRecord::Base
   validates_presence_of :user_id
   validates :rate, presence: true, numericality: true, format: { :with => /\A\d{1,5}(\.\d{0,2})?\z/ }
   validates_length_of :description, maximum: 1000, allow_blank: true
-  validate :limit_educational_experiences, on: :update
+  validate :check_educational_experiences, on: :update
   
   private
-    def limit_educational_experiences
-      if educational_experiences.count > 5
+    def is_numeric?(str)
+      /\A[+-]?\d+(\.|,)?\d*\z/ === str
+    end
+    
+    def check_educational_experiences
+      educational_experiences.each do |edu|
+        uni = edu.university
+        maj = edu.major
+        min = edu.minor
+        if edu.blank? and (maj.present? or min.present?)
+          errors.add(:educational_experiences_attributes, "#{I18n.t('errors.educational_experiences_attributes.no_university')}")
+        elsif [uni, maj, min].any? { |str| is_numeric?(str) }
+          errors.add(:educational_experiences_attributes, "#{I18n.t('errors.educational_experiences_attributes.numeric')}")
+        end
+      end
+      if educational_experiences.size > 10
         errors.add(:educational_experiences_attributes, "#{I18n.t('errors.educational_experiences_attributes.too_many')}")
       end
     end

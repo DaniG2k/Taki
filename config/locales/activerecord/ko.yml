@@ -37,6 +37,8 @@ ko:
   errors:
     educational_experiences_attributes:
       too_many: 가 너무 많습니다.
+      no_university: 에서 대학이 입력되지 않습니다.
+      numeric: 에서 숫자 만 포함되어 있습니다.
     messages:
       required: 에 내용을 입력해 주세요
       too_young: 은 부적합합니다.

@@ -37,6 +37,8 @@ ja:
   errors:
     educational_experiences_attributes:
       too_many: が多すぎます。
+      no_university: で大学が入力されていません。
+      numeric: で数値のみが含まれています。
     messages:
       required: を入力してください。
       too_young: は不適合です。若すぎるかもしれません。

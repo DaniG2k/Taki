@@ -37,6 +37,8 @@ en:
   errors:
     educational_experiences_attributes:
       too_many: are more than necessary.
+      no_university: has a missing university field.
+      numeric: only contains numeric values.
     messages:
       required: can't be blank.
       too_young: unaccepted. You may be a bit too young.
