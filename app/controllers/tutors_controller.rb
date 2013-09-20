@@ -9,6 +9,7 @@ class TutorsController < ApplicationController
   
   def new
     @tutor = current_user.build_tutor unless @tutor
+    @tutor.educational_experiences.build
   end
   
   def create
@@ -27,6 +28,7 @@ class TutorsController < ApplicationController
   end
   
   def edit
+    @tutor.educational_experiences.build
   end
   
   def update
