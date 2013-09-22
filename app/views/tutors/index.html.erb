@@ -4,7 +4,8 @@
 <%= render "errors" %>
 
 <%= paginate @tutors %>
-<table>
+
+<table class="table table-hover table-bordered table-striped">
 	<tr>
 		<th><%= t('.tutor_name') %></th>
 		<th><%= table_sort('rate', t(:rate, scope: 'activerecord.attributes.tutor') ) %></th>

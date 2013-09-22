@@ -57,7 +57,6 @@
         	<% if user_signed_in? %>
         		<li><%= link_to 'List Users', users_index_path %></li>
 						<li><%= link_to 'List Tutors', tutors_path %></li>
-						Logged in as <strong><%= current_user.email %></strong>.
 						<li><%= link_to_unless_current 'Edit profile', edit_user_registration_path %></li>
 						<% if current_user.is_tutor? %>
 							<li><%= link_to_unless_current 'My tutor profile', tutor_path(current_user.tutor) %></li>
