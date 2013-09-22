@@ -14,7 +14,9 @@
 	<li>
 		<strong><%= user.fullname %></strong>
 		<ul>
-			<li><%= image_tag user.avatar_url.to_s %></li>
+			<% if user.avatar_url.present? %>
+			<li><%= image_tag user.avatar_url.to_s, :class => "thumbnail" %></li>
+			<% end %>
 			<li><%= user.email %></li>
 			<li><%= user.gender %></li>
 			<li><%= user.birthday %></li>
