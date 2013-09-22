@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130913110523) do
+ActiveRecord::Schema.define(version: 20130922123945) do
 
   create_table "educational_experiences", force: true do |t|
     t.string   "university"
@@ -40,6 +40,10 @@ ActiveRecord::Schema.define(version: 20130913110523) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "country"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "city"
   end
 
   create_table "users", force: true do |t|

@@ -14,6 +14,12 @@
 	<%= country_select(:tutor, :country) %><br />
 	<br />
 	
+	
+	<div>
+		<%= f.label :address %>
+		<%= f.text_field :address %><br />
+	</div>
+	
 	<%= f.label :educational_experiences, t(:education, scope: 'activerecord.attributes.tutor') %>	
 	<%= f.fields_for :educational_experiences do |builder| %>
 		<%= render 'educational_experience_fields', f: builder %>
@@ -23,5 +29,4 @@
 	
   <%= f.submit "Submit" %>
 <% end %>
-
 <%= link_to 'Back', tutors_path %>

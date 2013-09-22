@@ -54,7 +54,9 @@ gem 'kaminari'
 gem 'kaminari-i18n', :git => "https://github.com/tigrish/kaminari-i18n.git"
 gem 'rmagick'
 gem 'carrierwave'
+gem 'geocoder'
 
+#gem 'i18n_country_select'
 #gem 'i18n-timezones'
 
 gem 'brakeman', group: :development

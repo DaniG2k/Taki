@@ -32,6 +32,11 @@ class TutorsController < ApplicationController
   end
   
   def update
+    street = params[:tutor][:address].downcase
+    city = params[:tutor][:city].downcase
+    country = params[:tutor][:country].downcase
+    params[:tutor][:address] = [street, city, country].join ', '
+    
     if @tutor.update_attributes(tutor_params)
       set_user_is_tutor
       flash[:success] = 'Tutor profile updated!'
@@ -49,7 +54,9 @@ class TutorsController < ApplicationController
   
   private
     def tutor_params
-      params.require(:tutor).permit(:id, :description, :rate, :country,
+      params.require(:tutor).permit(:id, :description, :rate,
+        :country, :city,
+        :address, :latitude, :longitude,
         educational_experiences_attributes:
         [:id, :university, :major, :minor, :_destroy]
       )

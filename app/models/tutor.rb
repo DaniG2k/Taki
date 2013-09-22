@@ -9,6 +9,13 @@ class Tutor < ActiveRecord::Base
   validates_length_of :description, maximum: 1000, allow_blank: false
   validate :check_educational_experiences, on: :update
   
+  geocoded_by :address do |obj, results|
+    if geo = results.first
+      obj.address = geo.address
+    end
+  end
+  after_validation :geocode, if: :address_changed?
+  
   private
     def is_numeric?(str)
       /\A[+-]?\d+(\.|,)?\d*\z/ === str
