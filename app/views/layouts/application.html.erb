@@ -8,46 +8,16 @@
   		<%= t('website.name') %>
   	<% end %>
   </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if user_signed_in? %>
-	Logged in as <strong><%= current_user.email %></strong>.
-	<%= link_to_unless_current 'Edit profile', edit_user_registration_path %> |
-	
-	<% if current_user.is_tutor? %>
-	<!-- TODO make a variable containing current_user.tutor -->
-		<%= link_to_unless_current 'My tutor profile', tutor_path(current_user.tutor) %> |
-		<%= link_to_unless_current 'Edit Tutor Info', edit_tutor_path(current_user.tutor) %> |
-	<% else %>
-		<%= link_to_unless_current 'Become a tutor', new_tutor_path %> |
-	<% end %>
-
-	<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<% else %>
-	<%= link_to 'Sign up', new_user_registration_path %> |
-	<%= link_to 'Login', new_user_session_path %>
-<% end %>
-<div>
-	Language:
-	<%= link_to_unless_current t('language.en'), locale: 'en' %> |
-	<%= link_to_unless_current t('language.ja'), locale: 'ja' %> |
-	<%= link_to_unless_current t('language.ko'), locale: 'ko' %>
-</div>
-<div>
-	<%= link_to_unless_current t('messages.index.title'), messages_path %>
-</div>
-
-<%= yield %>
-
-<p>
-	<%= link_to 'Home', :root %> |
-	<%= link_to 'About', about_path %> |
-	<%= link_to 'List Users', users_index_path %> |
-	<%= link_to 'List Tutors', tutors_path %>
-</p>
-
+	<%= render "common/navbar" %>
+	<div class="container">
+		<%= yield %>
+		<%= render "common/footer" %>
+	</div>
 </body>
 </html>

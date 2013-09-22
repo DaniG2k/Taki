@@ -11,6 +11,11 @@ class Tutor < ActiveRecord::Base
   
   geocoded_by :address do |obj, results|
     if geo = results.first
+      obj.latitude = geo.latitude
+      obj.longitude = geo.longitude
+      obj.country = geo.country
+      obj.city = geo.city
+      obj.postalcode = geo.postal_code
       obj.address = geo.address
     end
   end

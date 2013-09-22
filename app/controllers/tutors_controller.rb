@@ -1,6 +1,7 @@
 class TutorsController < ApplicationController
   before_action :authenticate_user!
   before_action :get_tutor, except: :create
+  before_action :parse_geolocation, only: :update
   helper_method :sort_column, :sort_direction
   
   def index
@@ -31,12 +32,7 @@ class TutorsController < ApplicationController
     @tutor.educational_experiences.build
   end
   
-  def update
-    street = params[:tutor][:address].downcase
-    city = params[:tutor][:city].downcase
-    country = params[:tutor][:country].downcase
-    params[:tutor][:address] = [street, city, country].join ', '
-    
+  def update    
     if @tutor.update_attributes(tutor_params)
       set_user_is_tutor
       flash[:success] = 'Tutor profile updated!'
@@ -55,8 +51,7 @@ class TutorsController < ApplicationController
   private
     def tutor_params
       params.require(:tutor).permit(:id, :description, :rate,
-        :country, :city,
-        :address, :latitude, :longitude,
+        :country, :city, :postalcode, :street, :address,
         educational_experiences_attributes:
         [:id, :university, :major, :minor, :_destroy]
       )
@@ -78,5 +73,17 @@ class TutorsController < ApplicationController
       unless current_user.is_tutor?
         current_user.update_attribute(:is_tutor, true)
       end
+    end
+    
+    def parse_geolocation
+      country = params[:tutor][:country].downcase
+      city = params[:tutor][:city].downcase
+      postalcode = params[:tutor][:postalcode].downcase
+      street = params[:tutor][:street].downcase
+      
+      address = Array.new
+      [street, postalcode, city, country].each {|attr| address << attr.humanize if attr.present?}
+      address = address.join(', ')
+      params[:tutor][:address] = address
     end
 end

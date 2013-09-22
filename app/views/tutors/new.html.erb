@@ -13,12 +13,12 @@
 	<%= t('current_country', scope: 'globals') %><br />
 	<%= country_select(:tutor, :country) %><br />
 	<br />
-	
-	
-	<div>
-		<%= f.label :address %>
-		<%= f.text_field :address %><br />
-	</div>
+	<%= f.label :city %>
+	<%= f.text_field :city %><br />
+	<br />
+	<%= f.label :address %>
+	<%= f.text_field :address %><br />
+	<br />
 	
 	<%= f.label :educational_experiences, t(:education, scope: 'activerecord.attributes.tutor') %>	
 	<%= f.fields_for :educational_experiences do |builder| %>

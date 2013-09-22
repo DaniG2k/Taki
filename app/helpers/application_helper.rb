@@ -7,6 +7,16 @@ module ApplicationHelper
     end
   end
   
+  def footer_date
+    created = 2013
+    current_year = Time.zone.now.year
+    if current_year == created
+      created
+    else
+      "#{created}-#{current_year}"
+    end
+  end
+  
   def table_sort(column, title = nil)
     title ||= column.titleize
     css_class = column == sort_column ? "current #{sort_direction}" : nil
