@@ -23,7 +23,7 @@ ko:
     sign_up: 등록
     login: 로그인
     logout: 로그 아웃
-    all_rights_reserved: 판권 소유.
+    copyright: "© %{website} %{year_range}년. 판권 소유."
   messages:
     index:
       title: 받은 편지
