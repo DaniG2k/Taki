@@ -15,6 +15,13 @@ ko:
     about:
       title: 타키에 대해
       description: 타키의 명세와 정보
+  common:
+    list_tutors: 튜터 목록
+    edit_profile: 프로파일 편집
+    edit_tutor_profile: 튜터 프로필 편집
+    sign_up: 등록
+    login: 로그인
+    logout: 로그 아웃
   messages:
     index:
       title: 받은 편지
@@ -24,7 +31,7 @@ ko:
       title: 대화
   tutors:
     index:
-      title: 튜터
+      title: 튜터 목록
       tutor_name: 튜터의 이름
     new:
       title: 튜터 등록

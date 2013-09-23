@@ -38,6 +38,13 @@ en:
     about:
       title: About
       description: Some information about Taki
+  common:
+      list_tutors: List tutors
+      edit_profile: Edit profile
+      edit_tutor_profile: Edit tutor profile
+      sign_up: Sign up
+      login: Login
+      logout: Logout
   messages:
     index:
       title: Inbox

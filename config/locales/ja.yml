@@ -15,6 +15,13 @@ ja:
     about:
       title: 滝について
       description: 滝の明細と情報
+  common:
+    list_tutors: チューター一覧
+    edit_profile: プロファイル編集
+    edit_tutor_profile: チュータープロファイル編集
+    sign_up: 登録
+    login: ログイン
+    logout: ログアウト
   messages:
     index:
       title: 受信トレイ
@@ -24,7 +31,7 @@ ja:
       title: カンバセーション
   tutors:
     index:
-      title: チューター
+      title: チューター一覧
       tutor_name: チューター氏名
     new:
       title: チューター登録

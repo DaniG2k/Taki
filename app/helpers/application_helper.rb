@@ -10,7 +10,7 @@ module ApplicationHelper
   def footer_date
     created = 2013
     current_year = Time.zone.now.year
-    current_year == created ? created : "#{created}-#{current_year}"
+    created == current_year ? created : "#{created}-#{current_year}"
   end
   
   def table_sort(column, title = nil)
