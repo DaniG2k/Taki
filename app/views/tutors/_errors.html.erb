@@ -5,8 +5,8 @@
 	<%= t('errors.template.header', model: Tutor.model_name.human.downcase, count: @tutor.errors.count) %>
 	<ul>
 		<% @tutor.errors.full_messages.each do |message| %>
-  		<li><%= message %></li>
-  		<% end %>
+  	<li><%= message %></li>
+  	<% end %>
  	 </ul>
 </div>
 <% end %>

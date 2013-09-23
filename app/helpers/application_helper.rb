@@ -10,8 +10,8 @@ module ApplicationHelper
   def puts_copyright
     created = 2013
     current_year = Time.zone.now.year
-    yr_rng = created == current_year ? created : "#{created}-#{current_year}"
-    t('copyright', scope: 'common', website: t('website.name'), year_range: yr_rng)
+    range = (created == current_year) ? created : "#{created}-#{current_year}"
+    t('copyright', scope: 'common', website: t('website.name'), year_range: range)
   end
   
   def table_sort(column, title = nil)
