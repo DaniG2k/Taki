@@ -41,6 +41,7 @@ en:
   common:
       list_tutors: List tutors
       edit_profile: Edit profile
+      my_tutor_profile: My tutor profile
       edit_tutor_profile: Edit tutor profile
       sign_up: Sign up
       login: Login

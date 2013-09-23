@@ -3,11 +3,11 @@
 
 <table class="table table-hover table-bordered">
   <tr>
-    <th><%= t :subject, scope: 'activerecord.attributes.message' %></th>
-    <th><%= t :body, scope: 'activerecord.attributes.message' %></th>
-    <th><%= t :sender, scope: 'activerecord.attributes.message' %></th>
-    <th><%= t :recipient, scope: 'activerecord.attributes.message' %></th>
-    <th><%= t :submitted, scope: 'activerecord.attributes.message' %></th>
+    <th><%= t 'subject', scope: 'activerecord.attributes.message' %></th>
+    <th><%= t 'body', scope: 'activerecord.attributes.message' %></th>
+    <th><%= t 'sender', scope: 'activerecord.attributes.message' %></th>
+    <th><%= t 'recipient', scope: 'activerecord.attributes.message' %></th>
+    <th><%= t 'submitted', scope: 'activerecord.attributes.message' %></th>
   </tr>
  
   <% @messages.each do |message| %>
