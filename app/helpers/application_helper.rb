@@ -7,10 +7,15 @@ module ApplicationHelper
     end
   end
   
-  def footer_date
+  def puts_copyright
     created = 2013
     current_year = Time.zone.now.year
-    created == current_year ? created : "#{created}-#{current_year}"
+    rights = t('all_rights_reserved', scope: 'common')
+    if created == current_year
+      "© #{t('website.name')} #{created}. #{rights}"
+    else
+      "© #{t('website.name')} #{created}-#{current_year}. #{rights}"
+    end
   end
   
   def table_sort(column, title = nil)

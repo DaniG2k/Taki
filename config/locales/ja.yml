@@ -23,6 +23,7 @@ ja:
     sign_up: 登録
     login: ログイン
     logout: ログアウト
+    all_rights_reserved: 無断複写·転載を禁じます。
   messages:
     index:
       title: 受信トレイ

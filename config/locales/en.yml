@@ -46,6 +46,7 @@ en:
       sign_up: Sign up
       login: Login
       logout: Logout
+      all_rights_reserved: All rights reserved.
   messages:
     index:
       title: Inbox
