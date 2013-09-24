@@ -6,3 +6,4 @@ ko:
     sessions:
       new:
         sign_in: "로그인"
+        remember: "메일 암호 저장"

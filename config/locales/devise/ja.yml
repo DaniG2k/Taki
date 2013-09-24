@@ -6,3 +6,4 @@ ja:
     sessions:
       new:
         sign_in: "ログイン"
+        remember: "メール・パスワードの保存"

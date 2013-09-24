@@ -6,3 +6,4 @@ en:
     sessions:
       new:
         sign_in: "Login"
+        remember: "Remember me"
