@@ -8,7 +8,7 @@ ko:
       user:
         email: 이메일
         password: 암호
-        password_confirmation: 암호
+        password_confirmation: 암호 확인
         current_password: 현재 암호
         first_name: 이름
         last_name: 성

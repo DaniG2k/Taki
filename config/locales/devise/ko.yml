@@ -1,0 +1,8 @@
+ko:
+  devise:
+    registrations:
+      new:
+        sign_up: "등록"
+    sessions:
+      new:
+        sign_in: "로그인"

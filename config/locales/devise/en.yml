@@ -1,0 +1,8 @@
+en:
+  devise:
+    registrations:
+      new:
+        sign_up: "Sign up"
+    sessions:
+      new:
+        sign_in: "Login"

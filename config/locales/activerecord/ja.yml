@@ -8,7 +8,7 @@ ja:
       user:
         email: メール
         password: パスワード
-        password_confirmation: パスワード
+        password_confirmation: パスワード確認
         current_password: 現在のパスワード
         first_name: ファーストネーム
         last_name: ラストネーム
