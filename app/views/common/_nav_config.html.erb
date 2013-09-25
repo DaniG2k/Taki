@@ -13,10 +13,10 @@
 		<% else %>
 			<li><%= link_to 'Become a tutor', new_tutor_path %></li>
 		<% end %>
-			<li><%= link_to t('logout', scope: 'common'), destroy_user_session_path, method: :delete %></li>
+			<li><%= link_to t('sign_out', scope: 'devise.sessions.destroy'), destroy_user_session_path, method: :delete %></li>
 	<% else %>
-		<li><%= link_to t('sign_up', scope: 'common'), new_user_registration_path %></li>
-		<li><%= link_to t('login', scope: 'common'), new_user_session_path %></li>
+		<li><%= link_to t('sign_up', scope: 'devise.registrations.new'), new_user_registration_path %></li>
+		<li><%= link_to t('sign_in', scope: 'devise.sessions.new'), new_user_session_path %></li>
 	<% end %>
 	</ul>
 </li>

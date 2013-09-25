@@ -7,3 +7,5 @@ ko:
       new:
         sign_in: "로그인"
         remember: "메일 암호 저장"
+      destroy:
+        sign_out: "로그 아웃"

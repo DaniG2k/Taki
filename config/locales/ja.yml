@@ -20,9 +20,6 @@ ja:
     edit_profile: プロファイル編集
     my_tutor_profile: 私のチューター・プロファイル
     edit_tutor_profile: チューター・プロファイル編集
-    sign_up: 登録
-    login: ログイン
-    logout: ログアウト
     copyright: "© %{website} %{year_range}年。 無断複写·転載を禁じます。"
   messages:
     index:

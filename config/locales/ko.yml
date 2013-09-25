@@ -20,9 +20,6 @@ ko:
     edit_profile: 프로파일 편집
     my_tutor_profile: 내 튜터 프로파일
     edit_tutor_profile: 튜터 프로필 편집
-    sign_up: 등록
-    login: 로그인
-    logout: 로그 아웃
     copyright: "© %{website} %{year_range}년. 판권 소유."
   messages:
     index:

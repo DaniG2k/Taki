@@ -7,3 +7,5 @@ en:
       new:
         sign_in: "Login"
         remember: "Remember me"
+      destroy:
+        sign_out: "Logout"
