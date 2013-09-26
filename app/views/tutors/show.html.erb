@@ -23,7 +23,7 @@
 		
 		<% @languages.each do |lang_info| %>
 			<strong><%= t(:language, scope: 'activerecord.attributes.languages') %>:</strong> <%= lang_info.language %><br />
-			<strong><%= t(:proficiency, scope: 'activerecord.attributes.languages') %>:</strong> <%= lang_info.proficiency %><br />
+			<strong><%= t(:proficiency, scope: 'activerecord.attributes.languages') %>:</strong> <%= parse_proficiency(lang_info.proficiency) %><br />
 		<% end %>
 	</p>
 </div>
