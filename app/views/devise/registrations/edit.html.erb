@@ -1,5 +1,5 @@
-<% title 'Edit Profile' %>
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<% title(t('edit_profile', scope: 'common')) %>
+<h1><%= t('edit_profile', scope: 'common') %></h1>
 
 
 <% if current_user.is_tutor? %>
