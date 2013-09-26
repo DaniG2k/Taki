@@ -43,7 +43,7 @@ en:
       edit_profile: Edit profile
       my_tutor_profile: My tutor profile
       edit_tutor_profile: Edit tutor profile
-      copyright: "© %{website} %{year_range}. All rights reserved."
+      copyright: "%{website} © %{year_range}. All rights reserved."
   messages:
     index:
       title: Inbox
