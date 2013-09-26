@@ -15,10 +15,22 @@
 		<p>
 			<%= t(:education, scope: 'activerecord.attributes.tutor') %>
 		</p>
-		<% @educational_experiences.each do |education| %>
-			<strong><%= t(:university, scope: 'activerecord.attributes.educational_experiences') %>:</strong> <%= education.university %><br />
-			<strong><%= t(:major, scope: 'activerecord.attributes.educational_experiences') %>:</strong> <%= education.major %><br />
-			<strong><%= t(:minor, scope: 'activerecord.attributes.educational_experiences') %>:</strong> <%= education.minor %><br />
+		
+		<% if @educational_experiences %>
+		<table class="table table-bordered table-striped table-condensed">
+			<tr>
+				<td><strong><%= t(:university, scope: 'activerecord.attributes.educational_experiences') %></strong></td>
+				<td><strong><%= t(:major, scope: 'activerecord.attributes.educational_experiences') %></strong></td>
+				<td><strong><%= t(:minor, scope: 'activerecord.attributes.educational_experiences') %></strong></td>
+			</tr>
+			<% @educational_experiences.each do |education| %>
+			<tr>
+				<td><%= education.university %></td>
+				<td><%= education.major %></td>
+				<td><%= education.minor %></td>
+			</tr>
+			<% end %>
+		</table>
 		<% end %>
 		
 		

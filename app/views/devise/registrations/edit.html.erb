@@ -2,10 +2,12 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 
+<% if current_user.is_tutor? %>
 <ul class="nav nav-tabs">
   <%= content_tag(:li, link_to(t('edit_profile', scope: 'common'), edit_user_registration_path), class: "active") %>
   <%= content_tag(:li, link_to(t('edit_tutor_profile', scope: 'common'), edit_tutor_path(current_user.tutor))) %>
 </ul>
+<% end %>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
