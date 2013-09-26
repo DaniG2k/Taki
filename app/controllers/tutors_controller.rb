@@ -11,6 +11,7 @@ class TutorsController < ApplicationController
   def new
     @tutor = current_user.build_tutor unless @tutor
     @tutor.educational_experiences.build
+    @tutor.languages.build
   end
   
   def create
@@ -26,10 +27,12 @@ class TutorsController < ApplicationController
 
   def show
     @educational_experiences = @tutor.educational_experiences
+    @languages = @tutor.languages
   end
   
   def edit
     @tutor.educational_experiences.build
+    @tutor.languages.build
   end
   
   def update    
@@ -52,6 +55,7 @@ class TutorsController < ApplicationController
     def tutor_params
       params.require(:tutor).permit(:id, :description, :rate,
         :country, :city, :postalcode, :street, :address,
+        languages_attributes: [:language, :proficiency],
         educational_experiences_attributes:
         [:id, :university, :major, :minor, :_destroy]
       )

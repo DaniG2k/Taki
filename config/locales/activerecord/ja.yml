@@ -24,10 +24,19 @@ ja:
         description: 詳細情報
         education: 教育
         educational_experiences_attributes: 教育フィールド
+        languages: 言語
       educational_experiences:
         university: 大学
         major: 専攻
         minor: 副専攻
+      languages:
+        language: 言語
+        proficiency: 能力
+        level:
+          beginner: 下級
+          intermediate: 中級
+          advanced: 上級
+          native: 母語
       message:
         subject: 件名
         body: メッセージ

@@ -24,10 +24,19 @@ en:
         description: Description
         education: Education
         educational_experiences_attributes: Educational experiences
+        languages_attributes: Languages
       educational_experiences:
         university: University
         major: Major
         minor: Minor
+      languages:
+        language: Language
+        proficiency: Proficiency
+        level:
+          beginner: Beginner
+          intermediate: Intermediate
+          advanced: Advanced
+          native: Native
       message:
         subject: Subject
         body: Body

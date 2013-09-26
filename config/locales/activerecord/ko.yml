@@ -24,10 +24,19 @@ ko:
         description: 상세 정보
         education: 교육
         educational_experiences_attributes: 교육 필드
+        languages: 언어
       educational_experiences:
         university: 대학교
         major: 전공
         minor: 부전공
+      languages:
+        language: 언어
+        proficiency: 능력
+        level:
+          beginner: 하급
+          intermediate: 중급
+          advanced: 고급
+          native: 모국어
       message:
         subject: 제목
         body: 메시지
