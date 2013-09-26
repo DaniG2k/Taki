@@ -21,11 +21,22 @@
 			<strong><%= t(:minor, scope: 'activerecord.attributes.educational_experiences') %>:</strong> <%= education.minor %><br />
 		<% end %>
 		
-		<% @languages.each do |lang_info| %>
-			<strong><%= t(:language, scope: 'activerecord.attributes.languages') %>:</strong> <%= lang_info.language %><br />
-			<strong><%= t(:proficiency, scope: 'activerecord.attributes.languages') %>:</strong> <%= parse_proficiency(lang_info.proficiency) %><br />
+		
+		<% if @languages %>
+		<table class="table table-bordered table-striped table-condensed">
+		<tr>
+			<td><strong><%= t(:language, scope: 'activerecord.attributes.languages') %></strong></td>
+			<td><strong><%= t(:proficiency, scope: 'activerecord.attributes.languages') %></strong></td>
+		</tr>
+			<% @languages.each do |lang_info| %>
+			<tr>
+				<td><%= lang_info.language %></td>
+				<td><%= parse_proficiency(lang_info.proficiency) %></td>
+			</tr>
+			<% end %>	
+		</table>
 		<% end %>
-	</p>
+		
 </div>
 
 <%= render "footer_links" %>
