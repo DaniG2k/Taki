@@ -16,7 +16,7 @@
 			<%= t(:education, scope: 'activerecord.attributes.tutor') %>
 		</p>
 		
-		<% if @educational_experiences %>
+		<% if @educational_experiences.present? %>
 		<table class="table table-bordered table-striped table-condensed">
 			<tr>
 				<td><strong><%= t(:university, scope: 'activerecord.attributes.educational_experiences') %></strong></td>
@@ -34,7 +34,7 @@
 		<% end %>
 		
 		
-		<% if @languages %>
+		<% if @languages.present? %>
 		<table class="table table-bordered table-striped table-condensed">
 		<tr>
 			<td><strong><%= t(:language, scope: 'activerecord.attributes.languages') %></strong></td>
