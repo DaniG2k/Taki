@@ -1,13 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>
-  	<% if content_for? :title %>
-  		<%= yield :title %>
-  	<% else %>
-  		<%= t('website.name') %>
-  	<% end %>
-  </title>
+  <title><%= content_for?(:title) ? yield(:title) : t('website.name') %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
