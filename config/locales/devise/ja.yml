@@ -3,6 +3,8 @@ ja:
     registrations:
       new:
         sign_up: "登録"
+      edit:
+        update: "更新"
     sessions:
       new:
         sign_in: "ログイン"

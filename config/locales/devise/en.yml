@@ -3,6 +3,8 @@ en:
     registrations:
       new:
         sign_up: "Sign up"
+      edit:
+        update: "Update"
     sessions:
       new:
         sign_in: "Login"

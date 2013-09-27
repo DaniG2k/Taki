@@ -3,6 +3,8 @@ ko:
     registrations:
       new:
         sign_up: "등록"
+      edit:
+        update: "업데이트"
     sessions:
       new:
         sign_in: "로그인"
