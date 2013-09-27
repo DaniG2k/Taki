@@ -5,6 +5,7 @@ ja:
         sign_up: "登録"
       edit:
         update: "更新"
+        cancel_account: "アカウント取消"
     sessions:
       new:
         sign_in: "ログイン"
