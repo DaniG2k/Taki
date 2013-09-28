@@ -10,9 +10,9 @@
 <body>
 	<%= render "common/navbar" %>
 	<div class="container">
-		<% #if current_page?(controller: "home") %>
-			<% #= yield %>
-		<% #else %>
+		<% if current_page?(controller: "home") or current_page?("/#{locale.to_s}/about")%>
+			<%= yield %>
+		<% else %>
 			<div class="row">
 			  <div class="col-md-4">
 			  	<%= render 'common/left_nav' %>
@@ -21,7 +21,7 @@
 			  	<%= yield %>
 			  </div>
 			</div>
-		<% #end %>
+		<% end %>
 		<%= render "common/footer" %>
 	</div>
 </body>
