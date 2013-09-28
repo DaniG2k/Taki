@@ -2,12 +2,7 @@
 <h1><%= t('edit_profile', scope: 'common') %></h1>
 
 
-<% if current_user.is_tutor? %>
-<ul class="nav nav-tabs">
-  <%= content_tag(:li, link_to(t('edit_profile', scope: 'common'), edit_user_registration_path), class: "active") %>
-  <%= content_tag(:li, link_to(t('edit_tutor_profile', scope: 'common'), edit_tutor_path(current_user.tutor))) %>
-</ul>
-<% end %>
+<%= render 'common/tutor_tabs' %>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
@@ -66,11 +61,12 @@
 
   <div><%= f.submit t('update', scope: 'devise.registrations.edit') %></div>
 <% end %>
-
-<div class="alert alert-warning">
-	<h3><%= t('cancel_account', scope: 'devise.registrations.edit') %></h3>
-	<%= t('unhappy', scope: 'devise.registrations.edit') %>
+<br />
+<hr />
+<div class="text-center alert alert-warning">
+	<h3><%= t('unhappy', scope: 'devise.registrations.edit') %></h3>
 	<%= button_to t('cancel_account', scope: 'devise.registrations.edit'), registration_path(resource_name), :data => { :confirm => t('globals.destroy_confirm') }, :method => :delete, :class => "btn btn-danger" %>
+	<br />
 </div>
 
 <%= link_to "Back", :back %>

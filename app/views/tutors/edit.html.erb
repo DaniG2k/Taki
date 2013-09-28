@@ -3,12 +3,7 @@
 
 <%= render "errors" %>
 
-<% if current_user.is_tutor? %>
-<ul class="nav nav-tabs">
-  <%= content_tag(:li, link_to(t('edit_profile', scope: 'common'), edit_user_registration_path)) %>
-  <%= content_tag(:li, link_to(t('edit_tutor_profile', scope: 'common'), edit_tutor_path(current_user.tutor)), class: "active") %>
-</ul>
-<% end %>
+<%= render 'common/tutor_tabs' %>
 
 <%= form_for @tutor do |f| %>
   <%= f.label :description, t('description', scope: 'activerecord.attributes.tutor') %><br />
@@ -47,4 +42,5 @@
   
   <%= f.submit "Submit" %>
 <% end %>
+
 <%= render "footer_links" %>
