@@ -5,10 +5,11 @@
 
 <div class="panel borderless-top panel-default">
 	<div class="panel-body">
-		<%= paginate @tutors %>
+		<div class="text-center">
+			<%= paginate @tutors %>
+		</div>
 		<div class="panel panel-primary">
 		  <div class="panel-heading">Panel heading</div>
-		  	
 		  <table class="table table-hover table-striped">
 		  	<tr>
 					<th><%= t('.tutor_name') %></th>
@@ -30,6 +31,5 @@
 				<% end %>
 		  </table>
 		</div>
-		<%= paginate @tutors %>
 	</div>
 </div>
