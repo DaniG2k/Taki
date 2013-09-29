@@ -21,6 +21,9 @@ ko:
     my_tutor_profile: 내 튜터 프로파일
     edit_tutor_profile: 튜터 프로필 편집
     copyright: "%{website} © %{year_range}년. 판권 소유."
+    search:
+      placeholder: 사이트 검색
+      button: 검색
   messages:
     index:
       title: 받은 편지

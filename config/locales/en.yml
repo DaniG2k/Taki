@@ -44,6 +44,9 @@ en:
       my_tutor_profile: My tutor profile
       edit_tutor_profile: Edit tutor profile
       copyright: "%{website} © %{year_range}. All rights reserved."
+      search:
+        placeholder: Search
+        button: Submit
   messages:
     index:
       title: Inbox

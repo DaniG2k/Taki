@@ -21,6 +21,9 @@ ja:
     my_tutor_profile: 私のチューター・プロファイル
     edit_tutor_profile: チューター・プロファイル編集
     copyright: "%{website} ©　%{year_range}年。 無断複写·転載を禁じます。"
+    search:
+      placeholder: サイト内検索
+      button: 検索
   messages:
     index:
       title: 受信トレイ
