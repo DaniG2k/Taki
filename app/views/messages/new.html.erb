@@ -1,5 +1,5 @@
 <% title t '.title' %>
-<h1><%= t '.title' %> <small><%= "#{t '.recipient' } #{@tutor.fullname}" %></small></h1>
+<h1><%= t '.title' %> <small><%= t('.recipient', user: @tutor.fullname) %></small></h1>
 
 <%= render "errors" %>
 
