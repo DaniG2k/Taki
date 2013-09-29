@@ -34,10 +34,10 @@ en:
     destroy_confirm: Are you sure?
   home:
     index:
-      description: Introduction to Taki
+      description: "Introduction to %{website}"
     about:
-      title: About
-      description: Some information about Taki
+      title: "About %{website}"
+      description: "Some information about %{website}"
   common:
       list_tutors: List tutors
       edit_profile: Edit profile

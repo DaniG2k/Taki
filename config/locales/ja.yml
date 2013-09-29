@@ -11,10 +11,10 @@ ja:
     destroy_confirm: 本当に削除しても宜しいですか？
   home:
     index:
-      description: 滝の紹介
+      description: "%{website}の紹介"
     about:
-      title: 滝について
-      description: 滝の明細と情報
+      title:  "%{website}について"
+      description: "%{website}の明細と情報"
   common:
     list_tutors: チューター・一覧
     edit_profile: プロファイル編集
