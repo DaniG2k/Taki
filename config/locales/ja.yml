@@ -30,6 +30,7 @@ ja:
     new:
       title: 新規メッセージ
       send: 送信
+      recipient: "受信者："
     show:
       title: カンバセーション
   tutors:

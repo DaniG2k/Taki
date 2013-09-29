@@ -30,6 +30,7 @@ ko:
     new:
       title: 새 메시지
       send: 전송
+      recipient: "받는 사람:"
     show:
       title: 대화
   tutors:

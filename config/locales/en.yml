@@ -53,6 +53,7 @@ en:
     new:
       title: New Message
       send: Send
+      recipient: "to:"
     show:
       title: Conversation
   tutors:
