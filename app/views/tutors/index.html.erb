@@ -3,31 +3,33 @@
 
 <%= render "errors" %>
 
-<%= paginate @tutors %>
-
-<div class="panel panel-primary">
-  <div class="panel-heading">Panel heading</div>
-  	
-  <table class="table table-hover table-striped">
-  	<tr>
-			<th><%= t('.tutor_name') %></th>
-			<th><%= table_sort('rate', t(:rate, scope: 'activerecord.attributes.tutor') ) %></th>
-			<th><%= table_sort('country', t(:country, scope: 'activerecord.attributes.tutor') ) %></th>
-			<th><%= t(:description, scope: 'activerecord.attributes.tutor') %></th>	
-		</tr>
-	  <% @tutors.each do |tutor| %>
-		<tr>
-			<td>
-				<strong>
-					<%= link_to tutor.user.fullname, new_message_path(:recipient_id => tutor) %>
-				</strong>
-			</td>
-			<td><%= tutor.rate %></td>
-			<td><%= tutor.country %></td>
-			<td><%= tutor.description %></td>
-		</tr>
-		<% end %>
-  </table>
+<div class="panel borderless-top panel-default">
+	<div class="panel-body">
+		<%= paginate @tutors %>
+		<div class="panel panel-primary">
+		  <div class="panel-heading">Panel heading</div>
+		  	
+		  <table class="table table-hover table-striped">
+		  	<tr>
+					<th><%= t('.tutor_name') %></th>
+					<th><%= table_sort('rate', t(:rate, scope: 'activerecord.attributes.tutor') ) %></th>
+					<th><%= table_sort('country', t(:country, scope: 'activerecord.attributes.tutor') ) %></th>
+					<th><%= t(:description, scope: 'activerecord.attributes.tutor') %></th>	
+				</tr>
+			  <% @tutors.each do |tutor| %>
+				<tr>
+					<td>
+						<strong>
+							<%= link_to tutor.user.fullname, new_message_path(:recipient_id => tutor) %>
+						</strong>
+					</td>
+					<td><%= tutor.rate %></td>
+					<td><%= tutor.country %></td>
+					<td><%= tutor.description %></td>
+				</tr>
+				<% end %>
+		  </table>
+		</div>
+		<%= paginate @tutors %>
+	</div>
 </div>
-
-<%= paginate @tutors %>

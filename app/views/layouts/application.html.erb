@@ -1,28 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= content_for?(:title) ? yield(:title) : t('website.name') %></title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
+<%= render 'layouts/head' %>
 <body>
 	<%= render "common/navbar" %>
 	<div class="container">
-		<% if current_page?(:root) %>
-			<%= yield %>
-		<% else %>
-			<div class="row">
-			  <div class="col-md-4">
-			  	<%= render 'common/left_nav' %>
-			  </div>
-			  <div class="col-md-8">
-			  	<%= yield %>
-			  </div>
+		<div class="row">
+			<div class="col-md-4">
+				<%= render 'common/left_nav' %>
 			</div>
-		<% end %>
-		<%= render "common/footer" %>
+			<div class="col-md-8">
+			 	<%= yield %>
+			</div>
+		</div>
+	<%= render "common/footer" %>
 	</div>
 </body>
 </html>
