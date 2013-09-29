@@ -11,7 +11,7 @@
 			<li><%= link_to t('my_tutor_profile', scope: 'common'), tutor_path(current_user.tutor) %></li>
 			<li><%= link_to t('edit_tutor_profile', scope: 'common'), edit_tutor_path(current_user.tutor) %></li>
 		<% else %>
-			<li><%= link_to 'Become a tutor', new_tutor_path %></li>
+			<li><%= link_to t('become_a_tutor', scope: 'common'), new_tutor_path %></li>
 		<% end %>
 			<li><%= link_to t('sign_out', scope: 'devise.sessions.destroy'), destroy_user_session_path, method: :delete %></li>
 	<% else %>

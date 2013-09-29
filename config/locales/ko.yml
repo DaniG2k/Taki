@@ -20,6 +20,7 @@ ko:
     edit_profile: 프로파일 편집
     my_tutor_profile: 내 튜터 프로파일
     edit_tutor_profile: 튜터 프로필 편집
+    become_a_tutor: 튜터된다
     copyright: "%{website} © %{year_range}년. 판권 소유."
     search:
       placeholder: 사이트 검색

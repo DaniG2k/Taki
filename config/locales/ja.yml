@@ -20,6 +20,7 @@ ja:
     edit_profile: プロファイル編集
     my_tutor_profile: 私のチューター・プロファイル
     edit_tutor_profile: チューター・プロファイル編集
+    become_a_tutor: チューターになる
     copyright: "%{website} ©　%{year_range}年。 無断複写·転載を禁じます。"
     search:
       placeholder: サイト内検索

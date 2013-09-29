@@ -43,6 +43,7 @@ en:
       edit_profile: Edit profile
       my_tutor_profile: My tutor profile
       edit_tutor_profile: Edit tutor profile
+      become_a_tutor: Become a tutor
       copyright: "%{website} © %{year_range}. All rights reserved."
       search:
         placeholder: Search
