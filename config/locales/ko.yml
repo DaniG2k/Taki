@@ -26,6 +26,7 @@ ko:
       title: 받은 편지
     new:
       title: 새 메시지
+      send: 전송
     show:
       title: 대화
   tutors:

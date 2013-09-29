@@ -49,6 +49,7 @@ en:
       title: Inbox
     new:
       title: New Message
+      send: Send
     show:
       title: Conversation
   tutors:

@@ -10,7 +10,7 @@
 <body>
 	<%= render "common/navbar" %>
 	<div class="container">
-		<% if current_page?(controller: "home") or current_page?("/#{locale.to_s}/about")%>
+		<% if current_page?(:root) %>
 			<%= yield %>
 		<% else %>
 			<div class="row">
