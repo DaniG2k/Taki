@@ -31,7 +31,7 @@ ja:
     new:
       title: 新規メッセージ
       send: 送信
-      recipient: "%{user}へ"
+      recipient: "%{user}さんへ"
     show:
       title: カンバセーション
   tutors:

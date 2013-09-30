@@ -31,7 +31,7 @@ ko:
     new:
       title: 새 메시지
       send: 전송
-      recipient: "%{user} 에게"
+      recipient: "%{user}님 에게"
     show:
       title: 대화
   tutors:
