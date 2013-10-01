@@ -12,6 +12,10 @@ ko:
   home:
     index:
       description: "%{website}의 소개"
+      jumbo_small: "세 가지 간단한 단계에서 학습 시작!"
+      step_1: "등록하고"
+      step_2: "튜터를 찾고"
+      step_3: "학습 시작!"
     about:
       title:  "%{website}에 대해"
       description: "%{website}의 명세와 정보"

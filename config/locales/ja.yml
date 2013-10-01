@@ -12,6 +12,10 @@ ja:
   home:
     index:
       description: "%{website}の紹介"
+      jumbo_small: "三つの簡単ステップで学習スタート！"
+      step_1: 登録して
+      step_2: チューターを探して
+      step_3: 学習開始！
     about:
       title:  "%{website}について"
       description: "%{website}の明細と情報"

@@ -35,6 +35,10 @@ en:
   home:
     index:
       description: "Introduction to %{website}"
+      jumbo_small: "Start learning in 3 easy steps!"
+      step_1: Sign up
+      step_2: Find a tutor
+      step_3: Start learning
     about:
       title: "About %{website}"
       description: "Some information about %{website}"
