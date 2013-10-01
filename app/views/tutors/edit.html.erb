@@ -55,7 +55,8 @@
 		<%= link_to_add_fields "Add field", f, :languages %>
 		<br />
 		<%= f.submit "Submit", class: "btn btn-success pull-left" %>
-		<%= button_to 'Delete tutor profile', tutor_path(@tutor), method: :delete, data: { confirm: "#{t('globals.destroy_confirm')}" }, class: "btn btn-danger pull-right" %>
 		<% end %>
+		<%= button_to 'Delete tutor profile', tutor_path(@tutor), method: :delete, data: { confirm: "#{t('globals.destroy_confirm')}" }, class: "btn btn-danger pull-right" %>
 	</div><!-- End Panel-body -->
+	
 </div><!-- End Panel -->
