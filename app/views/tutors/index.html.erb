@@ -5,6 +5,11 @@
 
 <div class="panel borderless-top panel-default">
 	<div class="panel-body">
+		<% flash.each do |klass, msg| -%>
+			<% if klass == :notice %>
+				<%= content_tag :div, msg, class: "alert alert-warning" %>
+			<% end %>
+    <% end -%>
 		<div class="text-center">
 			<%= paginate @tutors %>
 		</div>
