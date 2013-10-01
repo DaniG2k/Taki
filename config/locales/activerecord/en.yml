@@ -52,3 +52,4 @@ en:
       required: can't be blank.
       too_young: unaccepted. You may be a bit too young.
       too_old: unaccepted. Aren't you a little old for this?
+      recipient_not_found: "Sorry! That recipient was not found :("

@@ -52,3 +52,4 @@ ja:
       required: を入力してください。
       too_young: は不適合です。若すぎるかもしれません。
       too_old: は不適合です。
+      recipient_not_found: "申し訳ありません！そのユーザーが見つけられませんでした。:("

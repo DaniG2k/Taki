@@ -52,3 +52,4 @@ ko:
       required: 에 내용을 입력해 주세요
       too_young: 은 부적합합니다.
       too_old: 은 부적합합니다.
+      recipient_not_found: "죄송합니다. 사용자가 찾지 못했습니다 :("
